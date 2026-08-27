@@ -173,16 +173,6 @@ button {
     color: var(--purple);
 }
 
-.hero .and {
-    color: #54205d;
-
-    font-family: Georgia, serif;
-
-    font-weight: 400;
-
-    margin: 0 8px;
-}
-
 .hero h2 span:last-child {
     color: #24152a;
 }
