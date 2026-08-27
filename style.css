@@ -1,13 +1,15 @@
 :root {
-    --background: #f5f6f8;
+    --background: #f7f9fb;
     --surface: #ffffff;
-    --text: #202020;
+    --text: #1c1c1c;
     --text-secondary: #999999;
 
-    --purple: #b52ac5;
-    --purple-dark: #6f267b;
+    --purple: #b02fc2;
+    --purple-dark: #251427;
 
-    --border: #e7e7e7;
+    --bgSwitch: rgba(118, 118, 128, 0.12);
+
+    --border: #f4f4f4;
 
     --radius: 6px;
     --container-padding: 50px;
@@ -22,12 +24,6 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--background);
-    color: var(--text);
-}
-
 a {
     color: inherit;
     text-decoration: none;
@@ -36,12 +32,15 @@ a {
 button {
     font-family: inherit;
 }
+
 .header {
-    height: 58px;
+    height: 72px;
 
-    margin: 12px;
+    margin: 24px;
 
-    padding: 0 52px;
+    padding: 0 64px;
+
+    font-family: "Roboto", sans-serif;
 
     background: var(--surface);
 
@@ -53,25 +52,27 @@ button {
 
     justify-content: space-between;
 }
+
 .language-switch {
     display: flex;
 
-    background: #eeeeef;
+    background: var(--bgSwitch);
 
     border-radius: 20px;
 
-    padding: 2px;
+    padding: 3px;
 }
 
 .language {
     border: none;
     background: transparent;
 
-    padding: 5px 18px;
+    padding: 6px 16px;
 
     border-radius: 20px;
 
-    font-size: 10px;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
 
     cursor: pointer;
 
@@ -81,18 +82,20 @@ button {
 .language.active {
     background: white;
 
-    font-weight: 600;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
 }
+
 .navigation {
     display: flex;
 
     align-items: center;
 
-    gap: 28px;
+    gap: 24px;
 }
 
 .nav-link {
-    font-size: 11px;
+    font-size: 14px;
 
     position: relative;
 }
@@ -110,16 +113,19 @@ button {
 
     background: var(--purple);
 }
+
 .resume-button {
+    font-family: "Roboto", sans-serif;
+
     background: var(--purple);
 
     color: white;
 
-    padding: 8px 18px;
+    padding: 8px 24px;
 
-    border-radius: 4px;
+    border-radius: 6px;
 
-    font-size: 10px;
+    font-size: 14px;
 
     transition: transform 0.2s ease;
 }
@@ -127,12 +133,13 @@ button {
 .resume-button:hover {
     transform: translateY(-2px);
 }
+
 .hero {
-    min-height: 230px;
+    min-height: 220px;
 
-    margin: 12px;
+    margin: 24px;
 
-    padding: 50px;
+    padding: 64px;
 
     background: var(--surface);
 
@@ -150,158 +157,218 @@ button {
 }
 
 .hero h1 {
-    font-size: 42px;
+    font-family: "Helvetica Neue Medium Extended", sans-serif;
+
+    color: var(--purple-dark);
+
+    font-size: 28px;
 
     line-height: 1;
 
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 
-    letter-spacing: -1.5px;
+    letter-spacing: 0px;
+
+    font-weight: 90;
+}
+
+.hero .and {
+    font-family: "NewYork", sans-serif;
+    font-weight: 20;
 }
 
 .hero h2 {
-    font-size: 48px;
+    font-family: "Helvetica Neue Medium Extended", sans-serif;
+    font-size: 40px;
+    line-height: 2;
+    letter-spacing: 0px;
+    font-weight: 200;
 
-    line-height: 1;
-
-    letter-spacing: -2px;
-
-    font-weight: 700;
+    background: linear-gradient(to right, var(--purple), var(--purple-dark));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
-.hero h2 span:first-child {
-    color: var(--purple);
-}
-
-.hero h2 span:last-child {
-    color: #24152a;
-}
 .projects-section {
-    margin: 12px;
-
+    margin: 0px;
     padding: 52px 26px 48px;
-
     background: var(--surface);
-
     border-radius: var(--radius);
+    overflow: hidden;
 }
-
 .section-header {
     text-align: center;
-
-    margin-bottom: 48px;
+    margin-bottom: 40px;
 }
 
 .section-header h2 {
-    font-size: 36px;
-
-    margin-bottom: 26px;
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--text);
+    margin-bottom: 16px;
 }
-
 .section-header p {
-    font-size: 11px;
-
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 200;
     color: var(--text-secondary);
+    margin-bottom: 24px;
 }
+
 .projects-grid {
-    display: grid;
+    display: flex;
 
-    grid-template-columns: repeat(5, 1fr);
+    width: max-content;
 
-    gap: 32px;
+    gap: 24px;
+
+    animation: projects-carousel 50s linear infinite;
+    will-change: transform;
 }
+
+.projects-grid:hover {
+    animation-play-state: paused;
+}
+
+@keyframes projects-carousel {
+    from {
+        transform: translateX(calc(-50% - 12px));
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
 .project-card {
+    flex: 0 0 min(280px, calc(100vw - 48px));
+
+    width: min(280px, calc(100vw - 48px));
+
+    position: relative;
+
+    aspect-ratio: 3 / 4;
+
     overflow: hidden;
-
-    border-radius: 22px;
-
-    background: #e9e9ef;
-
-    border: 1px solid var(--border);
+    border-radius: 24px;
+    isolation: isolate;
+    box-shadow: 0 8px 24px rgba(37, 20, 39, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.project-card:hover,
+.project-card:focus-within {
+    transform: translateY(-12px);
+    box-shadow: 0 16px 30px rgba(37, 20, 39, 0.22);
+}
 .project-card img {
     display: block;
 
-    width: 100%;
+    position: absolute;
+    inset: 0;
 
-    aspect-ratio: 1 / 0.92;
+    width: 100%;
+    height: 100%;
 
     object-fit: cover;
+    border-radius: inherit;
 }
 .project-info {
-    padding: 12px 16px 14px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-    background: #e7e7ef;
+    overflow: hidden;
+    padding: 16px 16px 12px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.4)
+    );
+    border: 0.8px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px) saturate(175%);
+    -webkit-backdrop-filter: blur(30px) saturate(175%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08),
+        0 -8px 24px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
 }
-
 .project-info h3 {
+    font-family: "Helvetica Neue Medium Extended", sans-serif;
+    font-weight: 80;
+    color: var(--text);
     font-size: 18px;
-
-    margin-bottom: 10px;
+    line-height: 1.1;
+    margin-bottom: 16px;
 }
 .tags {
     display: flex;
-
     flex-wrap: wrap;
-
-    gap: 5px;
-
-    margin-bottom: 12px;
+    gap: 8px;
+    max-height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+        max-height 0.35s ease,
+        margin-bottom 0.35s ease,
+        opacity 0.25s ease,
+        transform 0.35s ease;
 }
-
+.project-card:hover .tags,
+.project-card:focus-within .tags {
+    max-height: 120px;
+    margin-bottom: 24px;
+    opacity: 1;
+    transform: translateY(0);
+}
 .tags span {
     background: white;
-
-    border: 1px solid #dcdcdc;
-
-    border-radius: 3px;
-
-    padding: 3px 7px;
-
-    font-size: 8px;
-
+    border: 0.5px solid var(--purple);
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
     white-space: nowrap;
 }
 .project-button {
     display: block;
-
     width: 100%;
-
-    padding: 8px;
-
-    border-radius: 20px;
-
+    padding: 12px 8px;
+    border-radius: 28px;
     text-align: center;
-
-    font-size: 10px;
-
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
     color: white;
-
     background: var(--purple);
-
     transition: transform 0.2s ease;
 }
-
 .project-button:hover {
     transform: scale(1.02);
 }
+
 .experience-section {
     margin: 12px;
-
     padding: 52px;
 
     background: var(--surface);
 
     border-radius: var(--radius);
 }
-
 .experience-section > h2 {
     font-size: 34px;
 
     margin-bottom: 32px;
 }
-
 .experience-grid {
     display: grid;
 
@@ -318,7 +385,6 @@ button {
 
     min-height: 170px;
 }
-
 .experience-top {
     display: flex;
 
@@ -328,17 +394,14 @@ button {
 
     margin-bottom: 16px;
 }
-
 .experience-card h3 {
     font-size: 15px;
 
     margin-bottom: 5px;
 }
-
 .experience-card h4 {
     font-size: 12px;
 }
-
 .experience-card p {
     color: #999999;
 
@@ -346,7 +409,6 @@ button {
 
     line-height: 1.5;
 }
-
 .year {
     background: var(--purple);
 
@@ -362,6 +424,7 @@ button {
 
     white-space: nowrap;
 }
+
 .contact-section {
     margin: 12px;
 
@@ -373,13 +436,11 @@ button {
 
     text-align: center;
 }
-
 .contact-section > h2 {
     font-size: 34px;
 
     margin-bottom: 48px;
 }
-
 .contact-grid {
     display: grid;
 
@@ -387,7 +448,6 @@ button {
 
     gap: 24px;
 }
-
 .contact-card {
     border: 1px solid var(--border);
 
@@ -397,22 +457,20 @@ button {
 
     transition: transform 0.2s ease;
 }
-
 .contact-card:hover {
     transform: translateY(-3px);
 }
-
 .contact-card h3 {
     font-size: 17px;
 
     margin-bottom: 22px;
 }
-
 .contact-card p {
     font-size: 9px;
 
     text-decoration: underline;
 }
+
 .footer {
     margin: 12px;
 
@@ -430,27 +488,23 @@ button {
 
     font-size: 10px;
 }
-
 .footer span {
     font-size: 9px;
 }
-@media (max-width: 900px) {
 
+@media (max-width: 900px) {
     .header {
         padding: 0 24px;
     }
-
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .contact-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
-@media (max-width: 600px) {
 
+@media (max-width: 600px) {
     .header {
         height: auto;
 
@@ -460,7 +514,6 @@ button {
 
         gap: 16px;
     }
-
     .navigation {
         order: 3;
 
@@ -468,17 +521,14 @@ button {
 
         justify-content: center;
     }
-
     .hero {
         min-height: 220px;
 
         padding: 32px 20px;
     }
-
     .hero h1 {
         font-size: 30px;
     }
-
     .hero h2 {
         font-size: 34px;
     }
@@ -504,5 +554,32 @@ button {
 
         text-align: center;
     }
+}
 
+@font-face {
+  font-family: "Helvetica Neue Medium Extended";
+  src: url("assets/fonts/helvetica-neue-medium-extended.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/roboto.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NewYork";
+  src: url("assets/fonts/NewYork.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-color: var(--background);
 }
