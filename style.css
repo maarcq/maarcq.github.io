@@ -204,9 +204,9 @@ button {
 }
 
 .section-header h2 {
-    font-family: "Roboto", sans-serif;
-    font-size: 32px;
-    font-weight: 900;
+    font-family: "Helvetica Neue Medium Extended", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
     color: var(--text);
     margin-bottom: 16px;
 }
@@ -215,7 +215,7 @@ button {
     font-size: 14px;
     font-weight: 200;
     color: var(--text-secondary);
-    margin-bottom: 24px;
+    margin-bottom: 40px;
 }
 
 .projects-grid {
@@ -364,9 +364,9 @@ button {
     border-radius: var(--radius);
 }
 .experience-section > h2 {
-    font-family: "Roboto", sans-serif;
-    font-size: 32px;
-    font-weight: 900;
+    font-family: "Helvetica Neue Medium Extended", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
     color: var(--text);
     margin-bottom: 40px;
 }
@@ -421,34 +421,30 @@ button {
 }
 
 .contact-section {
-    margin: 12px;
-
+    margin: 24px;
     padding: 52px;
 
     background: var(--surface);
-
     border-radius: var(--radius);
 
     text-align: center;
 }
 .contact-section > h2 {
-    font-size: 34px;
-
-    margin-bottom: 48px;
+    font-family: "Helvetica Neue Medium Extended", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 40px;
 }
 .contact-grid {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 24px;
 }
 .contact-card {
     border: 1px solid var(--border);
-
     border-radius: 6px;
-
-    padding: 28px 20px;
+    padding: 24px 24px;
 
     transition: transform 0.2s ease;
 }
@@ -456,33 +452,36 @@ button {
     transform: translateY(-3px);
 }
 .contact-card h3 {
-    font-size: 17px;
-
-    margin-bottom: 22px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 24px;
 }
 .contact-card p {
-    font-size: 9px;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
 
     text-decoration: underline;
 }
 
 .footer {
-    margin: 12px;
+    margin: 24px;
 
-    padding: 40px 52px;
+    padding: 40px 64px;
 
     background: var(--surface);
-
     border-radius: var(--radius);
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    font-size: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 100;
 }
+
 .footer span {
     font-size: 9px;
 }
