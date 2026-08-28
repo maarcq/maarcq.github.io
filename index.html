@@ -16,8 +16,8 @@
     <header class="header">
 
         <div class="language-switch">
-            <button class="language active">Português</button>
-            <button class="language">Inglês</button>
+             <button class="language active" data-language="pt">Português</button>
+             <button class="language" data-language="en">English</button>
         </div>
 
         <nav class="navigation">
@@ -25,15 +25,15 @@
                 Home
             </a>
             <a href="#projetos" class="nav-link">
-                Projetos
+                <span data-i18n="nav.projects">Projetos</span>
             </a>
             <a href="#sobre" class="nav-link">
-                Sobre
+                <span data-i18n="nav.about">Sobre</span>
             </a>
         </nav>
 
         <a href="https://drive.google.com/file/d/10igtKQ63M4ydT_5mw3jInMhqyHYmSDTR/view?usp=sharing" class="resume-button">
-            Baixar currículo
+            <span data-i18n="nav.resume">Baixar currículo</span>
         </a>
 
     </header>
@@ -49,7 +49,7 @@
             <h2>
                 <span>UX/UI Designer</span>
                 <span class="and">&</span>
-                <span>iOS Dev</span>
+                <span data-i18n="hero.iosDev">iOS Dev</span>
             </h2>
 
         </section>
@@ -60,10 +60,10 @@
 
             <div class="section-header">
 
-                <h2>Projetos</h2>
+                <h2 data-i18n="projects.title">Projetos</h2>
 
                 <p>
-                    UX/UI Designer | Product Designer | Developer
+                    <span data-i18n="projects.subtitle">UX/UI Designer | Product Designer | Developer</span>
                 </p>
 
             </div>
@@ -258,7 +258,7 @@
         <!-- EXPERIÊNCIA -->
         <section id="experiencia" class="experience-section">
 
-            <h2>Experiência</h2>
+            <h2 data-i18n="experience.title">Experiência</h2>
 
             <div class="experience-grid">
 
@@ -275,7 +275,7 @@
                         <span class="year">2026</span>
                     </div>
 
-                    <p>
+                    <p data-i18n="experience.faifce">
                         Product Designer no desenvolvimento de um sistema para monitoramento dos recursos financeiros do MEC.
                         Atuo na concepção, estruturação e evolução de soluções digitais focadas em gestão pública.
                     </p>
@@ -296,7 +296,7 @@
                         <span class="year">2024 - 2025</span>
                     </div>
 
-                    <p>
+                    <p data-i18n="experience.apple">
                         Com experiência em 11 projetos multiplataforma (iOS, iPadOS, visionOS),
                         atuei em todo o ciclo de design — desde pesquisa e ideação até prototipação no Figma,
                         validação com usuários e acompanhamento pós-lançamento.
@@ -312,17 +312,17 @@
         <!-- CONTATO -->
         <section id="sobre" class="contact-section">
 
-            <h2>Entre em contato comigo</h2>
+            <h2 data-i18n="contact.title">Entre em contato comigo</h2>
 
             <div class="contact-grid">
 
                 <a href="tel:+5585999590533" class="contact-card">
-                    <h3>Celular</h3>
+                    <h3 data-i18n="contact.phone">Celular</h3>
                     <p>+55 (85) 99959-0533</p>
                 </a>
 
                 <a href="mailto:contato.marcellequeiroz@gmail.com" class="contact-card">
-                    <h3>Email</h3>
+                    <h3 data-i18n="contact.email">Email</h3>
                     <p>contato.marcellequeiroz@gmail.com</p>
                 </a>
 
@@ -348,8 +348,8 @@
 
         <strong>Marcelle Queiroz</strong>
 
-        <span>
-            © 2026 Marcelle Queiroz. All rights reserved.
+        <span data-i18n="footer.rights">
+            © 2026 Marcelle Queiroz. Todos os direitos reservados.
         </span>
 
     </footer>

@@ -17,6 +17,28 @@
     padding: 3px;
 }
 
+.language-switch.changed {
+    animation: language-switch-change 320ms ease;
+}
+
+@keyframes language-switch-change {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.04);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .language-switch.changed {
+        animation: none;
+    }
+}
+
 .language {
     border: none;
     background: transparent;
