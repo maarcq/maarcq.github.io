@@ -1,0 +1,63 @@
+.contact-section {
+    margin: 24px;
+    padding: 52px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.contact-section > h2 {
+    font-family: "Helvetica Neue Medium Extended", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 40px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.contact-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px 24px;
+    transition: transform 0.2s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+}
+
+.contact-card h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.contact-card p {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+.footer {
+    margin: 24px;
+    padding: 40px 64px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.footer span {
+    font-size: 9px;
+}

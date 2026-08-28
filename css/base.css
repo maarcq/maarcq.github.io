@@ -1,0 +1,63 @@
+:root {
+    --background: #f7f9fb;
+    --surface: #ffffff;
+    --text: #1c1c1c;
+    --text-secondary: #999999;
+
+    --purple: #b02fc2;
+    --purple-dark: #251427;
+
+    --bgSwitch: rgba(118, 118, 128, 0.12);
+
+    --border: #f4f4f4;
+
+    --radius: 6px;
+    --container-padding: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+@font-face {
+    font-family: "Helvetica Neue Medium Extended";
+    src: url("../assets/fonts/helvetica-neue-medium-extended.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../assets/fonts/roboto.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NewYork";
+    src: url("../assets/fonts/NewYork.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: var(--background);
+}

@@ -1,0 +1,40 @@
+.hero {
+    min-height: 220px;
+    margin: 24px;
+    padding: 64px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: "Helvetica Neue Medium Extended", sans-serif;
+    color: var(--purple-dark);
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: 0px;
+    font-weight: 90;
+}
+
+.hero .and {
+    font-family: "NewYork", sans-serif;
+    font-weight: 20;
+}
+
+.hero h2 {
+    font-family: "Helvetica Neue Medium Extended", sans-serif;
+    font-size: 40px;
+    line-height: 2;
+    letter-spacing: 0px;
+    font-weight: 200;
+    background: linear-gradient(to right, var(--purple), var(--purple-dark));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}

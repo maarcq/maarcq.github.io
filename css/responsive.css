@@ -1,0 +1,60 @@
+@media (max-width: 900px) {
+    .header {
+        padding: 0 24px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        height: auto;
+        padding: 16px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .navigation {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 220px;
+        padding: 32px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .projects-section,
+    .experience-section,
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    .projects-grid,
+    .experience-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        padding: 30px 20px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
