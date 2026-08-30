@@ -13,9 +13,8 @@
 }
 
 .about-photo-card {
-    border-radius: 24px;
     overflow: hidden;
-    min-height: 560px;
+    min-height: 200px;
     box-shadow: 0 18px 36px rgba(20, 24, 35, 0.12);
 }
 
@@ -39,13 +38,13 @@
 
 .about-intro h2 {
     font-family: "Helvetica Neue Medium Extended", sans-serif;
-    font-size: 42px;
+    font-size: 36px;
     color: var(--text);
     font-weight: 500;
 }
 
 .about-intro span {
-    font-size: 28px;
+    font-size: 22px;
 }
 
 .about-badges {
