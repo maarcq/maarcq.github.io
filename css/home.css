@@ -90,3 +90,69 @@
 .resume-button:hover {
     transform: translateY(-2px);
 }
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.home-page.tab-panel.active {
+    display: block;
+}
+
+.projects-nav-wrap {
+    position: relative;
+}
+
+.projects-modal {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    width: 420px;
+    background: rgba(240, 240, 240, 0.98);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 18px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.projects-modal.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.project-option {
+    border: none;
+    background: transparent;
+    text-align: left;
+    font-size: 26px;
+    line-height: 1.4;
+    font-family: "Helvetica Neue Medium Extended", sans-serif;
+    color: #1d1d1d;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.project-option:hover,
+.project-option:focus-visible {
+    background: rgba(176, 47, 194, 0.08);
+    outline: none;
+}
+
+.project-detail-section {
+    min-height: 280px;
+    background: transparent;
+}
+

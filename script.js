@@ -11,11 +11,100 @@ if (projectsGrid) {
 	});
 }
 
+const tabLinks = document.querySelectorAll(".nav-link");
+const tabPanels = document.querySelectorAll(".tab-panel");
+const projectModal = document.getElementById("projects-modal");
+const projectOptions = document.querySelectorAll(".project-option");
+const projectDetail = document.getElementById("project-detail");
+const projectNav = document.querySelector(".project-nav");
+
+const activateTab = (tabName) => {
+	const validTabs = ["home", "sobre", "project-detail"];
+	const validTab = validTabs.includes(tabName) ? tabName : "home";
+
+	tabPanels.forEach((panel) => {
+		panel.classList.toggle("active", panel.id === validTab);
+	});
+
+	tabLinks.forEach((link) => {
+		const isProjectLink = link.dataset.tab === "projetos";
+		const isActive = isProjectLink ? validTab === "project-detail" : link.dataset.tab === validTab;
+		link.classList.toggle("active", isActive);
+	});
+
+	if (window.history.replaceState) {
+		const hash = validTab === "project-detail" ? "projetos" : validTab;
+		window.history.replaceState(null, "", `#${hash}`);
+	}
+};
+
+const openProjectsModal = (shouldOpen) => {
+	if (!projectModal) {
+		return;
+	}
+	projectModal.classList.toggle("open", shouldOpen);
+};
+
+if (projectNav) {
+	projectNav.addEventListener("mouseenter", () => openProjectsModal(true));
+	projectNav.addEventListener("focusin", () => openProjectsModal(true));
+	projectNav.addEventListener("click", (event) => {
+		event.preventDefault();
+		openProjectsModal(!projectModal.classList.contains("open"));
+	});
+	projectNav.addEventListener("mouseleave", () => {
+		setTimeout(() => {
+			if (!projectModal?.matches(":hover")) {
+				openProjectsModal(false);
+			}
+		}, 120);
+	});
+}
+
+if (projectModal) {
+	projectModal.addEventListener("mouseleave", () => openProjectsModal(false));
+	projectModal.addEventListener("focusout", (event) => {
+		if (!projectModal.contains(event.relatedTarget)) {
+			openProjectsModal(false);
+		}
+	});
+}
+
+projectOptions.forEach((option) => {
+	option.addEventListener("click", () => {
+		if (projectDetail) {
+			projectDetail.innerHTML = "";
+		}
+		activateTab("project-detail");
+		openProjectsModal(false);
+		window.scrollTo({ top: 0, behavior: "auto" });
+	});
+});
+
+tabLinks.forEach((link) => {
+	if (link.dataset.tab === "projetos") {
+		return;
+	}
+
+	link.addEventListener("click", (event) => {
+		event.preventDefault();
+		activateTab(link.dataset.tab);
+		window.scrollTo({ top: 0, behavior: "auto" });
+	});
+});
+
+const initialTab = window.location.hash.replace("#", "") || "home";
+activateTab(initialTab === "projetos" ? "home" : initialTab);
+
 const languageButtons = document.querySelectorAll(".language");
 const languageSwitch = document.querySelector(".language-switch");
 let currentLanguage = "pt";
 const translations = {
 	pt: {
+		language: {
+			portuguese: "Português",
+			english: "Inglês",
+		},
 		nav: {
 			projects: "Projetos",
 			about: "Sobre",
@@ -44,6 +133,10 @@ const translations = {
 		},
 	},
 	en: {
+		language: {
+			portuguese: "Portuguese",
+			english: "English",
+		},
 		nav: {
 			projects: "Projects",
 			about: "About",
@@ -102,6 +195,11 @@ const applyLanguage = (language, shouldAnimate = false) => {
 
 	document.querySelectorAll(".project-button").forEach((button) => {
 		button.textContent = selectedTranslations.projects.view;
+	});
+
+	document.querySelectorAll(".language").forEach((button) => {
+		const label = button.dataset.language === "pt" ? selectedTranslations.language.portuguese : selectedTranslations.language.english;
+		button.textContent = label;
 	});
 
 	document.querySelectorAll(".tags span").forEach((tag) => {

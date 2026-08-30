@@ -17,17 +17,25 @@
 
         <div class="language-switch">
              <button class="language active" data-language="pt">Português</button>
-             <button class="language" data-language="en">English</button>
+             <button class="language" data-language="en">Inglês</button>
         </div>
 
-        <nav class="navigation">
-            <a href="#home" class="nav-link active">
+        <nav class="navigation" aria-label="Navegação principal">
+            <a href="#home" class="nav-link active" data-tab="home">
                 Home
             </a>
-            <a href="#projetos" class="nav-link">
-                <span data-i18n="nav.projects">Projetos</span>
-            </a>
-            <a href="#sobre" class="nav-link">
+            <div class="projects-nav-wrap">
+                <a href="#projetos" class="nav-link project-nav" data-tab="projetos">
+                    <span data-i18n="nav.projects">Projetos</span>
+                </a>
+                <div class="projects-modal" id="projects-modal" aria-label="Lista de projetos">
+                    <button type="button" class="project-option" data-project="Altroo">Altroo</button>
+                    <button type="button" class="project-option" data-project="Hanka">Hanka</button>
+                    <button type="button" class="project-option" data-project="Monitor Pronatec">Monitor Pronatec</button>
+                    <button type="button" class="project-option" data-project="Into The Cauldron">Into The Cauldron</button>
+                </div>
+            </div>
+            <a href="#sobre" class="nav-link" data-tab="sobre">
                 <span data-i18n="nav.about">Sobre</span>
             </a>
         </nav>
@@ -41,303 +49,266 @@
 
     <main>
 
-        <!-- HERO -->
-        <section id="home" class="hero">
+        <section id="home" class="tab-panel active home-page">
 
-            <h1>Marcelle Queiroz</h1>
+            <section class="hero">
+                <h1>Marcelle Queiroz</h1>
+                <h2>
+                    <span>UX/UI Designer</span>
+                    <span class="and">&</span>
+                    <span data-i18n="hero.iosDev">iOS Dev</span>
+                </h2>
+            </section>
 
-            <h2>
-                <span>UX/UI Designer</span>
-                <span class="and">&</span>
-                <span data-i18n="hero.iosDev">iOS Dev</span>
-            </h2>
+            <section id="projetos" class="projects-section">
+                <div class="section-header">
+                    <h2 data-i18n="projects.title">Projetos</h2>
+                    <p>
+                        <span data-i18n="projects.subtitle">UX/UI Designer | Product Designer | Developer</span>
+                    </p>
+                </div>
 
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <img src="assets/images/altroo.png" alt="Projeto Altroo">
+                        <div class="project-info">
+                            <h3>Altroo</h3>
+                            <div class="tags">
+                                <span>UX Research</span>
+                                <span>Design System</span>
+                            </div>
+                            <a href="#" class="project-button">Ver projeto</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="assets/images/into-the-cauldron.png" alt="Projeto Into the Cauldron">
+                        <div class="project-info">
+                            <h3>Into the Cauldron</h3>
+                            <div class="tags">
+                                <span>Game</span>
+                                <span>UI/UX Design</span>
+                            </div>
+                            <a href="#" class="project-button">Ver projeto</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="assets/images/wanty.png" alt="Projeto Wanty">
+                        <div class="project-info">
+                            <h3>Wanty</h3>
+                            <div class="tags">
+                                <span>Financeiro</span>
+                                <span>Product Manager</span>
+                            </div>
+                            <a href="#" class="project-button">Ver projeto</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="assets/images/sonharium.png" alt="Projeto Sonharium">
+                        <div class="project-info">
+                            <h3>Sonharium</h3>
+                            <div class="tags">
+                                <span>SwiftData</span>
+                                <span>Development Leader</span>
+                            </div>
+                            <a href="#" class="project-button">Ver projeto</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="assets/images/sandbox.png" alt="Projeto Sandbox">
+                        <div class="project-info">
+                            <h3>Sandbox</h3>
+                            <div class="tags">
+                                <span>Ilustração</span>
+                                <span>Design Gráfico</span>
+                            </div>
+                            <a href="#" class="project-button">Ver projeto</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="assets/images/crochetize.png" alt="Projeto Crochetize">
+                        <div class="project-info">
+                            <h3>Crochetize</h3>
+                            <div class="tags">
+                                <span>Acessibilidade</span>
+                                <span>Design Gráfico</span>
+                            </div>
+                            <a href="#" class="project-button">Ver projeto</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="assets/images/satty.png" alt="Projeto Satty">
+                        <div class="project-info">
+                            <h3>Satty</h3>
+                            <div class="tags">
+                                <span>iOS System</span>
+                                <span>3D Game</span>
+                            </div>
+                            <a href="#" class="project-button">Ver projeto</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="experiencia" class="experience-section">
+                <h2 data-i18n="experience.title">Experiência</h2>
+                <div class="experience-grid">
+                    <article class="experience-card">
+                        <div class="experience-top">
+                            <div>
+                                <h3>Product Designer</h3>
+                                <h4>Fundação de Apoio ao Ensino, a Pesquisa e a Extensão do IFCE – FAIFCE</h4>
+                            </div>
+                            <span class="year">2026</span>
+                        </div>
+                        <p data-i18n="experience.faifce">
+                            Product Designer no desenvolvimento de um sistema para monitoramento dos recursos financeiros do MEC.
+                            Atuo na concepção, estruturação e evolução de soluções digitais focadas em gestão pública.
+                        </p>
+                    </article>
+
+                    <article class="experience-card">
+                        <div class="experience-top">
+                            <div>
+                                <h3>UI/UX Designer & iOS Developer</h3>
+                                <h4>Apple Developer Academy</h4>
+                            </div>
+                            <span class="year">2024 - 2025</span>
+                        </div>
+                        <p data-i18n="experience.apple">
+                            Com experiência em 11 projetos multiplataforma (iOS, iPadOS, visionOS),
+                            atuei em todo o ciclo de design — desde pesquisa e ideação até prototipação no Figma,
+                            validação com usuários e acompanhamento pós-lançamento.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="contato" class="contact-section">
+                <h2 data-i18n="contact.title">Entre em contato comigo</h2>
+                <div class="contact-grid">
+                    <a href="tel:+5585999590533" class="contact-card">
+                        <h3 data-i18n="contact.phone">Celular</h3>
+                        <p>+55 (85) 99959-0533</p>
+                    </a>
+
+                    <a href="mailto:contato.marcellequeiroz@gmail.com" class="contact-card">
+                        <h3 data-i18n="contact.email">Email</h3>
+                        <p>contato.marcellequeiroz@gmail.com</p>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/marcellerq/" class="contact-card" target="_blank" rel="noopener noreferrer">
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/marcelleq</p>
+                    </a>
+
+                    <a href="https://github.com/maarcq" class="contact-card" target="_blank" rel="noopener noreferrer">
+                        <h3>GitHub</h3>
+                        <p>github.com/maarcq</p>
+                    </a>
+                </div>
+            </section>
         </section>
 
+        <section id="project-detail" class="tab-panel project-detail-section" aria-live="polite"></section>
 
-        <!-- PROJETOS -->
-        <section id="projetos" class="projects-section">
+        <section id="sobre" class="tab-panel about-section">
+            <div class="about-layout">
+                <div class="about-photo-card">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80" alt="Retrato de Marcelle" />
+                </div>
 
-            <div class="section-header">
+                <div class="about-content">
+                    <div class="about-intro">
+                        <h2>Olá</h2>
+                        <span aria-label="olá">👋</span>
+                    </div>
 
-                <h2 data-i18n="projects.title">Projetos</h2>
+                    <div class="about-badges">
+                        <span>UX/UI Design</span>
+                        <span>iOS Dev</span>
+                        <span>Engenharia</span>
+                    </div>
 
-                <p>
-                    <span data-i18n="projects.subtitle">UX/UI Designer | Product Designer | Developer</span>
-                </p>
+                    <p class="about-summary">
+                        Graduanda em Engenharia de Telecomunicações, UI/UX Designer e Desenvolvedora iOS com experiência no Apple Developer Academy. Atuo na criação de produtos digitais, aplicando design centrado no usuário, pensamento estratégico e colaboração com times de tecnologia para transformar necessidades reais em experiências intuitivas e eficientes.
+                    </p>
 
-            </div>
+                    <div class="about-columns">
+                        <div class="about-block">
+                            <h3>Experiência Profissional</h3>
 
+                            <div class="info-card">
+                                <strong>Website Design</strong>
+                                <p>Product Designer no desenvolvimento de um sistema para monitoramento dos recursos financeiros do MEC. Atuo na concepção, estruturação e evolução de soluções digitais focadas em gestão pública.</p>
+                            </div>
 
-            <div class="projects-grid">
+                            <div class="info-card">
+                                <strong>Mobile App</strong>
+                                <p>Com experiência em 11 projetos multiplataforma (iOS, iPadOS, visionOS), atuei em todo o ciclo de design — desde pesquisa e ideação até prototipação no Figma, validação com usuários e acompanhamento pós-lançamento.</p>
+                            </div>
 
-                <!-- ALTROO -->
-                <article class="project-card">
+                            <div class="info-card">
+                                <strong>Creative Development</strong>
+                                <p>Atuação no desenvolvimento full-cycle de produtos para o ecossistema Apple, participando de projetos para iOS, iPadOS, visionOS, watchOS e tvOS. Experiência em todo o ciclo de vida do produto, desde a ideação até o design final e implementação.</p>
+                            </div>
+                        </div>
 
-                    <img
-                        src="assets/images/altroo.png"
-                        alt="Projeto Altroo"
-                    >
+                        <div class="about-block">
+                            <h3>Educação & Certificados</h3>
 
-                    <div class="project-info">
+                            <div class="info-card">
+                                <strong>Apple Developer Academy</strong>
+                                <p>App Development with Swift Certified User</p>
+                            </div>
 
-                        <h3>Altroo</h3>
+                            <div class="info-card">
+                                <strong>Instituto Federal de Educação, Ciência e Tecnologia do Ceará</strong>
+                                <p>Bacharelado em Engenharia de Telecomunicações</p>
+                            </div>
 
-                        <div class="tags">
+                            <div class="info-card">
+                                <strong>Mandarim - Linguagem</strong>
+                                <p>HSK</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-block">
+                        <h3>Habilidades & Ferramentas</h3>
+
+                        <div class="skill-pills">
+                            <span>Experiência do Usuário (UX)</span>
+                            <span>Design de Interfaces Digitais</span>
+                            <span>Arquitetura da Informação</span>
                             <span>UX Research</span>
+                            <span>Acessibilidade (WCAG)</span>
                             <span>Design System</span>
+                            <span>UI Libraries</span>
+                            <span>Prototipação e Wireframes</span>
+                            <span>Documentação Funcional</span>
+                            <span>Metodologias Ágeis (Scrum, Kanban)</span>
+                            <span>Storytelling</span>
+                            <span>Handoff para time técnico</span>
+                            <span>Trabalho em equipes multidisciplinares</span>
+                            <span>Branding e Identidade Visual</span>
                         </div>
 
-                        <a href="#" class="project-button">
-                            Ver projeto
-                        </a>
-
-                    </div>
-
-                </article>
-
-                <!-- INTO THE CAULDRON -->
-                <article class="project-card">
-
-                    <img
-                        src="assets/images/into-the-cauldron.png"
-                        alt="Projeto Into the Cauldron"
-                    >
-
-                    <div class="project-info">
-
-                        <h3>Into the Cauldron</h3>
-
-                        <div class="tags">
-                            <span>Game</span>
-                            <span>UI/UX Design</span>
+                        <div class="tool-grid">
+                            <div class="tool-item tool-figma"><span>Figma</span></div>
+                            <div class="tool-item tool-xcode"><span>Xcode</span></div>
+                            <div class="tool-item tool-miro"><span>Miro</span></div>
+                            <div class="tool-item tool-jira"><span>Jira</span></div>
+                            <div class="tool-item tool-photoshop"><span>Photoshop</span></div>
                         </div>
-
-                        <a href="#" class="project-button">
-                            Ver projeto
-                        </a>
-
                     </div>
-
-                </article>
-
-                <!-- WANTY -->
-                <article class="project-card">
-
-                    <img
-                        src="assets/images/wanty.png"
-                        alt="Projeto Wanty"
-                    >
-
-                    <div class="project-info">
-
-                        <h3>Wanty</h3>
-
-                        <div class="tags">
-                            <span>Financeiro</span>
-                            <span>Product Manager</span>
-                        </div>
-
-                        <a href="#" class="project-button">
-                            Ver projeto
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- SONHARIUM -->
-                <article class="project-card">
-
-                    <img
-                        src="assets/images/sonharium.png"
-                        alt="Projeto Sonharium"
-                    >
-
-                    <div class="project-info">
-
-                        <h3>Sonharium</h3>
-
-                        <div class="tags">
-                            <span>SwiftData</span>
-                            <span>Development Leader</span>
-                        </div>
-
-                        <a href="#" class="project-button">
-                            Ver projeto
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- SANDBOX -->
-                <article class="project-card">
-
-                    <img
-                        src="assets/images/sandbox.png"
-                        alt="Projeto Sandbox"
-                    >
-
-                    <div class="project-info">
-
-                        <h3>Sandbox</h3>
-
-                        <div class="tags">
-                            <span>Ilustração</span>
-                            <span>Design Gráfico</span>
-                        </div>
-
-                        <a href="#" class="project-button">
-                            Ver projeto
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- CROCHETIZE -->
-                <article class="project-card">
-
-                    <img
-                        src="assets/images/crochetize.png"
-                        alt="Projeto Crochetize"
-                    >
-
-                    <div class="project-info">
-
-                        <h3>Crochetize</h3>
-
-                        <div class="tags">
-                            <span>Acessibilidade</span>
-                            <span>Design Gráfico</span>
-                        </div>
-
-                        <a href="#" class="project-button">
-                            Ver projeto
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- SATTY -->
-                <article class="project-card">
-
-                    <img
-                        src="assets/images/satty.png"
-                        alt="Projeto Satty"
-                    >
-
-                    <div class="project-info">
-
-                        <h3>Satty</h3>
-
-                        <div class="tags">
-                            <span>iOS System</span>
-                            <span>3D Game</span>
-                        </div>
-
-                        <a href="#" class="project-button">
-                            Ver projeto
-                        </a>
-
-                    </div>
-
-                </article>
-
+                </div>
             </div>
-
-        </section>
-
-
-        <!-- EXPERIÊNCIA -->
-        <section id="experiencia" class="experience-section">
-
-            <h2 data-i18n="experience.title">Experiência</h2>
-
-            <div class="experience-grid">
-
-                <article class="experience-card">
-
-                    <div class="experience-top">
-                        <div>
-                            <h3>Product Designer</h3>
-                            <h4>
-                                Fundação de Apoio ao Ensino, a Pesquisa e a Extensão do IFCE – FAIFCE
-                            </h4>
-                        </div>
-
-                        <span class="year">2026</span>
-                    </div>
-
-                    <p data-i18n="experience.faifce">
-                        Product Designer no desenvolvimento de um sistema para monitoramento dos recursos financeiros do MEC.
-                        Atuo na concepção, estruturação e evolução de soluções digitais focadas em gestão pública.
-                    </p>
-
-                </article>
-
-
-                <article class="experience-card">
-
-                    <div class="experience-top">
-                        <div>
-                            <h3>UI/UX Designer & iOS Developer</h3>
-                            <h4>
-                                Apple Developer Academy
-                            </h4>
-                        </div>
-
-                        <span class="year">2024 - 2025</span>
-                    </div>
-
-                    <p data-i18n="experience.apple">
-                        Com experiência em 11 projetos multiplataforma (iOS, iPadOS, visionOS),
-                        atuei em todo o ciclo de design — desde pesquisa e ideação até prototipação no Figma,
-                        validação com usuários e acompanhamento pós-lançamento.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- CONTATO -->
-        <section id="sobre" class="contact-section">
-
-            <h2 data-i18n="contact.title">Entre em contato comigo</h2>
-
-            <div class="contact-grid">
-
-                <a href="tel:+5585999590533" class="contact-card">
-                    <h3 data-i18n="contact.phone">Celular</h3>
-                    <p>+55 (85) 99959-0533</p>
-                </a>
-
-                <a href="mailto:contato.marcellequeiroz@gmail.com" class="contact-card">
-                    <h3 data-i18n="contact.email">Email</h3>
-                    <p>contato.marcellequeiroz@gmail.com</p>
-                </a>
-
-                <a href="https://www.linkedin.com/in/marcellerq/" class="contact-card" target="_blank" rel="noopener noreferrer">
-                    <h3>LinkedIn</h3>
-                    <p>linkedin.com/in/marcelleq</p>
-                </a>
-
-                <a href="https://github.com/maarcq" class="contact-card" target="_blank" rel="noopener noreferrer">
-                    <h3>GitHub</h3>
-                    <p>github.com/maarcq</p>
-                </a>
-
-            </div>
-
         </section>
 
     </main>
