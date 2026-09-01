@@ -1,14 +1,52 @@
-const projectsGrid = document.querySelector(".projects-grid");
+// Load pages dynamically
+const pageContent = document.getElementById("page-content");
 
-if (projectsGrid) {
-	const projectCards = [...projectsGrid.children];
+const loadPages = async () => {
+	try {
+		// Load home page
+		const homeResponse = await fetch("pages/home.html");
+		const homeHTML = await homeResponse.text();
 
-	projectCards.forEach((projectCard) => {
-		const duplicatedCard = projectCard.cloneNode(true);
+		// Load about page
+		const aboutResponse = await fetch("pages/about.html");
+		const aboutHTML = await aboutResponse.text();
 
-		duplicatedCard.setAttribute("aria-hidden", "true");
-		projectsGrid.appendChild(duplicatedCard);
-	});
+		// Insert content
+		if (pageContent) {
+			pageContent.innerHTML = homeHTML + aboutHTML;
+		}
+
+		// Re-initialize after loading
+		reinitializePageScripts();
+	} catch (error) {
+		console.error("Error loading pages:", error);
+	}
+};
+
+const reinitializePageScripts = () => {
+	// Duplicate projects grid
+	const projectsGrid = document.querySelector(".projects-grid");
+	if (projectsGrid) {
+		const projectCards = [...projectsGrid.children];
+		projectCards.forEach((projectCard) => {
+			const duplicatedCard = projectCard.cloneNode(true);
+			duplicatedCard.setAttribute("aria-hidden", "true");
+			projectsGrid.appendChild(duplicatedCard);
+		});
+	}
+
+	// Re-attach event listeners
+	setupTabNavigation();
+	setupProjectsModal();
+	setupLanguageButtons();
+	setupCopyCards();
+};
+
+// Wait for DOM to be ready
+if (document.readyState === "loading") {
+	document.addEventListener("DOMContentLoaded", loadPages);
+} else {
+	loadPages();
 }
 
 const tabLinks = document.querySelectorAll(".nav-link");
@@ -22,11 +60,16 @@ const activateTab = (tabName) => {
 	const validTabs = ["home", "sobre", "project-detail"];
 	const validTab = validTabs.includes(tabName) ? tabName : "home";
 
-	tabPanels.forEach((panel) => {
+	// Get fresh references to tab panels and links
+	const currentTabPanels = document.querySelectorAll(".tab-panel");
+	const currentTabLinks = document.querySelectorAll(".nav-link");
+	const currentProjectModal = document.getElementById("projects-modal");
+
+	currentTabPanels.forEach((panel) => {
 		panel.classList.toggle("active", panel.id === validTab);
 	});
 
-	tabLinks.forEach((link) => {
+	currentTabLinks.forEach((link) => {
 		const isProjectLink = link.dataset.tab === "projetos";
 		const isActive = isProjectLink ? validTab === "project-detail" : link.dataset.tab === validTab;
 		link.classList.toggle("active", isActive);
@@ -39,65 +82,77 @@ const activateTab = (tabName) => {
 };
 
 const openProjectsModal = (shouldOpen) => {
-	if (!projectModal) {
+	const currentProjectModal = document.getElementById("projects-modal");
+	if (!currentProjectModal) {
 		return;
 	}
-	projectModal.classList.toggle("open", shouldOpen);
+	currentProjectModal.classList.toggle("open", shouldOpen);
 };
 
-if (projectNav) {
-	projectNav.addEventListener("mouseenter", () => openProjectsModal(true));
-	projectNav.addEventListener("focusin", () => openProjectsModal(true));
-	projectNav.addEventListener("click", (event) => {
-		event.preventDefault();
-		openProjectsModal(!projectModal.classList.contains("open"));
-	});
-	projectNav.addEventListener("mouseleave", () => {
-		setTimeout(() => {
-			if (!projectModal?.matches(":hover")) {
-				openProjectsModal(false);
+const setupTabNavigation = () => {
+	const tabLinks = document.querySelectorAll(".nav-link");
+	const projectOptions = document.querySelectorAll(".project-option");
+	const projectDetail = document.getElementById("project-detail");
+
+	projectOptions.forEach((option) => {
+		option.addEventListener("click", () => {
+			if (projectDetail) {
+				projectDetail.innerHTML = "";
 			}
-		}, 120);
-	});
-}
-
-if (projectModal) {
-	projectModal.addEventListener("mouseleave", () => openProjectsModal(false));
-	projectModal.addEventListener("focusout", (event) => {
-		if (!projectModal.contains(event.relatedTarget)) {
+			activateTab("project-detail");
 			openProjectsModal(false);
-		}
+			window.scrollTo({ top: 0, behavior: "auto" });
+		});
 	});
-}
 
-projectOptions.forEach((option) => {
-	option.addEventListener("click", () => {
-		if (projectDetail) {
-			projectDetail.innerHTML = "";
+	tabLinks.forEach((link) => {
+		if (link.dataset.tab === "projetos") {
+			return;
 		}
-		activateTab("project-detail");
-		openProjectsModal(false);
-		window.scrollTo({ top: 0, behavior: "auto" });
-	});
-});
 
-tabLinks.forEach((link) => {
-	if (link.dataset.tab === "projetos") {
-		return;
+		link.addEventListener("click", (event) => {
+			event.preventDefault();
+			activateTab(link.dataset.tab);
+			window.scrollTo({ top: 0, behavior: "auto" });
+		});
+	});
+
+	const initialTab = window.location.hash.replace("#", "") || "home";
+	activateTab(initialTab === "projetos" ? "home" : initialTab);
+};
+
+const setupProjectsModal = () => {
+	const projectNav = document.querySelector(".project-nav");
+	const projectModal = document.getElementById("projects-modal");
+
+	if (projectNav) {
+		projectNav.addEventListener("mouseenter", () => openProjectsModal(true));
+		projectNav.addEventListener("focusin", () => openProjectsModal(true));
+		projectNav.addEventListener("click", (event) => {
+			event.preventDefault();
+			const currentProjectModal = document.getElementById("projects-modal");
+			openProjectsModal(!currentProjectModal.classList.contains("open"));
+		});
+		projectNav.addEventListener("mouseleave", () => {
+			setTimeout(() => {
+				const currentProjectModal = document.getElementById("projects-modal");
+				if (!currentProjectModal?.matches(":hover")) {
+					openProjectsModal(false);
+				}
+			}, 120);
+		});
 	}
 
-	link.addEventListener("click", (event) => {
-		event.preventDefault();
-		activateTab(link.dataset.tab);
-		window.scrollTo({ top: 0, behavior: "auto" });
-	});
-});
+	if (projectModal) {
+		projectModal.addEventListener("mouseleave", () => openProjectsModal(false));
+		projectModal.addEventListener("focusout", (event) => {
+			if (!projectModal.contains(event.relatedTarget)) {
+				openProjectsModal(false);
+			}
+		});
+	}
+};
 
-const initialTab = window.location.hash.replace("#", "") || "home";
-activateTab(initialTab === "projetos" ? "home" : initialTab);
-
-const languageButtons = document.querySelectorAll(".language");
-const languageSwitch = document.querySelector(".language-switch");
 let currentLanguage = "pt";
 const translations = {
 	pt: {
@@ -120,8 +175,8 @@ const translations = {
 		},
 		experience: {
 			title: "Experiência",
-			faifce: "Product Designer no desenvolvimento de um sistema para monitoramento dos recursos financeiros do MEC. Atuo na concepção, estruturação e evolução de soluções digitais focadas em gestão pública.",
-			apple: "Com experiência em 11 projetos multiplataforma (iOS, iPadOS, visionOS), atuei em todo o ciclo de design — desde pesquisa e ideação até prototipação no Figma, validação com usuários e acompanhamento pós-lançamento.",
+			faifce: "Product Designer responsável pela estruturação e evolução de soluções digitais para o monitoramento de recursos do Ministério da Educação (MEC). Foco em design de sistemas complexos, usabilidade e transparência na gestão pública.",
+			apple: "Product Designer com 11 projetos multiplataforma (iOS, iPadOS, visionOS). Domínio de todo o ciclo de design: pesquisa, ideação, prototipação no Figma, testes de usabilidade e acompanhamento pós-lançamento.",
 		},
 		contact: {
 			title: "Entre em contato comigo",
@@ -152,8 +207,8 @@ const translations = {
 		},
 		experience: {
 			title: "Experience",
-			faifce: "Product Designer developing a system to monitor MEC financial resources. I work on the conception, structure, and evolution of digital solutions focused on public administration.",
-			apple: "With experience in 11 multiplatform projects (iOS, iPadOS, visionOS), I worked throughout the design cycle — from research and ideation to Figma prototyping, user validation, and post-launch follow-up.",
+			faifce: "Product Designer responsible for structuring and evolving digital solutions for monitoring Ministry of Education (MEC) resources. Focus on complex systems design, usability and transparency in public management.",
+			apple: "Product Designer with 11 multiplatform projects (iOS, iPadOS, visionOS). Mastery of the entire design cycle: research, ideation, prototyping in Figma, user validation and post-launch follow-up.",
 		},
 		contact: {
 			title: "Get in touch",
@@ -212,12 +267,13 @@ const applyLanguage = (language, shouldAnimate = false) => {
 		}
 	});
 
-	languageButtons.forEach((button) => {
+	document.querySelectorAll(".language").forEach((button) => {
 		const isActive = button.dataset.language === language;
 		button.classList.toggle("active", isActive);
 		button.setAttribute("aria-pressed", isActive);
 	});
 
+	const languageSwitch = document.querySelector(".language-switch");
 	if (shouldAnimate && languageChanged && languageSwitch) {
 		languageSwitch.classList.remove("changed");
 		void languageSwitch.offsetWidth;
@@ -227,11 +283,18 @@ const applyLanguage = (language, shouldAnimate = false) => {
 	currentLanguage = language;
 };
 
-languageButtons.forEach((button) => {
-	button.addEventListener("click", () => applyLanguage(button.dataset.language, true));
-});
+const setupLanguageButtons = () => {
+	const buttons = document.querySelectorAll(".language");
+	buttons.forEach((button) => {
+		button.removeEventListener("click", languageClickHandler);
+		button.addEventListener("click", languageClickHandler);
+	});
+	applyLanguage(currentLanguage);
+};
 
-applyLanguage("pt");
+const languageClickHandler = (e) => {
+	applyLanguage(e.target.dataset.language, true);
+};
 
 const setupCopyCard = (selector, feedbackMessage, ariaLabel) => {
 	const card = document.querySelector(selector);
@@ -281,5 +344,7 @@ const setupCopyCard = (selector, feedbackMessage, ariaLabel) => {
 	});
 };
 
-setupCopyCard('a[href^="tel:"]', "Número copiado!", "Número de celular copiado");
-setupCopyCard('a[href^="mailto:"]', "E-mail copiado!", "E-mail copiado");
+const setupCopyCards = () => {
+	setupCopyCard('a[href^="tel:"]', "Número copiado!", "Número de celular copiado");
+	setupCopyCard('a[href^="mailto:"]', "E-mail copiado!", "E-mail copiado");
+};

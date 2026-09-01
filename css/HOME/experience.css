@@ -1,0 +1,132 @@
+.experience-section {
+  margin: 24px;
+  padding: 52px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  text-align: left;
+}
+
+.experience-section h2 {
+  font-family: "Helvetica Neue Medium Extended", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 40px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.experience-card {
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  border: 0.6px var(--purple) solid;
+}
+
+.experience-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.experience-card h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.experience-card h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0px;
+}
+
+.year {
+  background: var(--purple);
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.experience-card p {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 50;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 60px 20px;
+  }
+
+  .experience-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .experience-card {
+    padding: 30px;
+  }
+
+  .experience-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .experience-top {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .year {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 40px 16px;
+  }
+
+  .experience-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .experience-card {
+    padding: 20px;
+  }
+
+  .experience-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .experience-card h4 {
+    font-size: 0.9rem;
+  }
+
+  .experience-card p {
+    font-size: 0.85rem;
+  }
+}
+============================================ */
