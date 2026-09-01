@@ -112,7 +112,7 @@
     top: calc(100% + 12px);
     left: 50%;
     transform: translateX(-50%) translateY(-10px);
-    width: 420px;
+    width: 320px;
     background: rgba(240, 240, 240, 0.98);
     border: 1px solid rgba(0, 0, 0, 0.04);
     border-radius: 18px;
@@ -124,6 +124,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
+    font-family: "Roboto", sans-serif;
 }
 
 .projects-modal.open {
@@ -136,18 +137,20 @@
     border: none;
     background: transparent;
     text-align: left;
-    font-size: 26px;
+    font-size: 18px;
     line-height: 1.4;
-    font-family: "Helvetica Neue Medium Extended", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #1d1d1d;
     padding: 8px 12px;
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .project-option:hover,
 .project-option:focus-visible {
-    background: rgba(176, 47, 194, 0.08);
+    background: var(--purple);
+    color: #ffffff;
     outline: none;
 }
 

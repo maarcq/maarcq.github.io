@@ -8,5 +8,11 @@
 @import url("css/HOME/experience.css");
 @import url("css/HOME/contact.css");
 
+/* ===PROJECTS=== */
+@import url("css/PROJECTS/Altroo/altroo.css");
+@import url("css/PROJECTS/Hanka/hanka.css");
+@import url("css/PROJECTS/Monitor Pronatec/monitor-pronatec.css");
+@import url("css/PROJECTS/Into The Cauldron/into-the-cauldron.css");
+
 /* ===ABOUT=== */
 @import url("css/ABOUT/about.css");

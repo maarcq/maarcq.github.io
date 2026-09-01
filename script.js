@@ -94,11 +94,39 @@ const setupTabNavigation = () => {
 	const projectOptions = document.querySelectorAll(".project-option");
 	const projectDetail = document.getElementById("project-detail");
 
+	// Project name to file mapping
+	const projectFileMap = {
+		"Altroo": "pages/projects/altroo.html",
+		"Hanka": "pages/projects/hanka.html",
+		"Monitor Pronatec": "pages/projects/monitor-pronatec.html",
+		"Into The Cauldron": "pages/projects/into-the-cauldron.html",
+	};
+
 	projectOptions.forEach((option) => {
-		option.addEventListener("click", () => {
-			if (projectDetail) {
-				projectDetail.innerHTML = "";
+		option.addEventListener("click", async () => {
+			const projectName = option.dataset.project;
+			const projectFile = projectFileMap[projectName];
+
+			if (projectFile && projectDetail) {
+				try {
+					const response = await fetch(projectFile);
+					const projectHTML = await response.text();
+					projectDetail.innerHTML = projectHTML;
+
+					// Re-attach back button listener
+					const backButton = projectDetail.querySelector(".back-to-projects");
+					if (backButton) {
+						backButton.addEventListener("click", () => {
+							projectDetail.innerHTML = "";
+							activateTab("home");
+						});
+					}
+				} catch (error) {
+					console.error("Error loading project:", error);
+					projectDetail.innerHTML = "<p>Erro ao carregar o projeto.</p>";
+				}
 			}
+
 			activateTab("project-detail");
 			openProjectsModal(false);
 			window.scrollTo({ top: 0, behavior: "auto" });
