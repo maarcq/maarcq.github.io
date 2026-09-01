@@ -11,6 +11,10 @@
 
     --border: #f4f4f4;
 
+/* ===ALTROO STYLES=== */
+    --altrooBlue: #4D9AEC;
+    --altrooTeal: #11B8AD;
+   
     --radius: 6px;
     --container-padding: 50px;
 }
