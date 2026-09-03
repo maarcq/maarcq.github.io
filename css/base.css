@@ -14,6 +14,10 @@
 /* ===ALTROO STYLES=== */
     --altrooBlue: #4D9AEC;
     --altrooTeal: #11B8AD;
+    --altrooBlueLight: #E7EEF7;
+    --altrooTealLight: #E7FDFB;
+    --blackground: #1a1e24;
+    --whitesheet: #f9ffff;
    
     --radius: 6px;
     --container-padding: 50px;
@@ -60,6 +64,20 @@ button {
     font-weight: 100;
     font-style: normal;
     font-display: swap;
+}
+
+@font-face {
+    font-family: "Baloo2";
+    src: url("../assets/fonts/Baloo2.woff2") format("woff2");
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: "SF Pro Rounded";
+    src: url("../assets/fonts/SFProRounded.woff2") format("woff2");
+    font-style: normal;
+    font-display: swap; 
 }
 
 body {

@@ -185,8 +185,8 @@ let currentLanguage = "pt";
 const translations = {
 	pt: {
 		language: {
-			portuguese: "Português",
-			english: "Inglês",
+			portuguese: "Português 🇧🇷",
+			english: "Inglês 🇺🇸",
 		},
 		nav: {
 			projects: "Projetos",
@@ -217,8 +217,8 @@ const translations = {
 	},
 	en: {
 		language: {
-			portuguese: "Portuguese",
-			english: "English",
+			portuguese: "Portuguese 🇧🇷",
+			english: "English 🇺🇸",
 		},
 		nav: {
 			projects: "Projects",
