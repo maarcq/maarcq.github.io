@@ -80,6 +80,21 @@ button {
     font-display: swap; 
 }
 
+@font-face {
+    font-family: "SF Pro Rounded Thin";
+    src: url("../assets/fonts/SFProRoundedThin.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: "SF Pro Display Regular";
+    src: url("../assets/fonts/SFProDisplayRegular.woff2") format("woff2");
+    font-style: normal;
+    font-display: swap; 
+}
+
 body {
     background-color: var(--background);
 }
