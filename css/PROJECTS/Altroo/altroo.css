@@ -7,6 +7,7 @@
 	padding: 16px;
 	max-width: 100%;
 	margin: 0;
+	overflow: hidden;
 }
 
 .project-detail-section[data-project="Altroo"].active {
@@ -20,7 +21,7 @@
 	background: linear-gradient(135deg, #56D5CC 0%, #52BBDA 55%, #4D9AEC 100%);
 	margin: 0;
     width: 100%;
-	height: clamp(200px, 50vw, 400px);
+	height: clamp(280px, 42vw, 560px);
 	border-radius: 24px;
 	position: relative;
 	overflow: hidden;
@@ -28,14 +29,16 @@
 /* Logo Nome Altroo */
 .project-detail-section[data-project="Altroo"] .hero-logo {
 	position: absolute;
-	top: 30px;
+	top: clamp(20px, 4vw, 48px);
 	left: 50%;
 	transform: translateX(-50%);
-    height: 5%;
+	width: min(22%, 180px);
+	height: auto;
 	z-index: 10;
 }
 .project-detail-section[data-project="Altroo"] .hero-logo img {
-	height: 100%;
+	width: 100%;
+	height: auto;
 	display: block;
 }
 /* Icon Background */
@@ -59,19 +62,20 @@
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
-	position: center bottom;
+	position: relative;
 	z-index: 10;
 }
 .project-detail-section[data-project="Altroo"] .phone-mockup {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-	position: center bottom;
+	position: relative;
 	opacity: 1;
 	transform: none;
 	margin: 0 auto;
 	z-index: 10;
-    height: 98%;
+	height: min(98%, 540px);
+	max-width: 100%;
 }
 .project-detail-section[data-project="Altroo"] .phone-mockup img {
 	height: 100%;
@@ -85,15 +89,12 @@
    01 SOBRE
    ============================================ */
 .project-detail-section[data-project="Altroo"] .project-sobre {
-	margin-bottom: 60px;
-	margin-top: 60px;
-	margin-left: 64px;
-	margin-right: 64px;
+	margin: clamp(48px, 6vw, 96px) clamp(24px, 5vw, 80px);
 }
 .project-detail-section[data-project="Altroo"] .sobre-heading,
 .project-detail-section[data-project="Altroo"] .sobre-content {
 	display: grid;
-	grid-template-columns: 200px minmax(0, 1fr);
+	grid-template-columns: clamp(140px, 14vw, 200px) minmax(0, 1fr);
 }
 .project-detail-section[data-project="Altroo"] .sobre-heading {
 	align-items: baseline;
@@ -153,11 +154,11 @@
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 16px;
-	margin: 0 16px 120px;
+	margin: 0 clamp(16px, 3vw, 48px) clamp(72px, 8vw, 120px);
 }
 .project-detail-section[data-project="Altroo"] .workflow-card {
 	min-height: fit-content;
-	padding: 40px 40px;
+	padding: clamp(24px, 3vw, 40px);
 	border-radius: 24px;
 }
 .project-detail-section[data-project="Altroo"] .workflow-card h2 {
@@ -198,14 +199,12 @@
    ============================================ */
 .project-detail-section[data-project="Altroo"] .project-workflow {
 	position: relative;
-	margin-bottom: 60px;
-	margin-left: 64px;
-	margin-right: 64px;	
+	margin: 0 clamp(24px, 5vw, 80px) clamp(48px, 6vw, 96px);
 }
 .project-detail-section[data-project="Altroo"] .workflow-heading,
 .project-detail-section[data-project="Altroo"] .workflow-content {
 	display: grid;
-	grid-template-columns: 200px minmax(0, 1fr);
+	grid-template-columns: clamp(140px, 14vw, 200px) minmax(0, 1fr);
 }
 .project-detail-section[data-project="Altroo"] .workflow-heading {
 	align-items: baseline;
@@ -222,7 +221,7 @@
 .project-detail-section[data-project="Altroo"] .workflow-process {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 64px;
+	gap: clamp(24px, 4vw, 64px);
 }
 .project-detail-section[data-project="Altroo"] .workflow-step h3 {
 	margin-bottom: 24px;
@@ -250,27 +249,31 @@
 }
 .project-detail-section[data-project="Altroo"] .workflow-gallery {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-columns: minmax(0, 935fr) minmax(0, 1535fr);
 	gap: 32px;
+	width: 100%;
+	align-items: stretch;
 	margin-top: 40px;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 }
 .project-detail-section[data-project="Altroo"] .workflow-image {
 	position: relative;
-	height: 100%;
+	min-width: 0;
+	height: auto;
 	margin: 0;
 	overflow: hidden;
+	border-radius: 16px;
 }
 .project-detail-section[data-project="Altroo"] .workflow-image img {
 	display: block;
 	width: 100%;
-	height: 100%;
+	height: auto;
 	object-fit: contain;
 }
 .project-detail-section[data-project="Altroo"] .workflow-image-secondary img {
 	display: block;
 	width: 100%;
-	height: 100%;
+	height: auto;
 	object-fit: contain;
 }
 
@@ -279,14 +282,12 @@
    ============================================ */
 .project-detail-section[data-project="Altroo"] .project-branding {
 	position: relative;
-	margin-bottom: 60px;
-	margin-left: 64px;
-	margin-right: 64px;
+	margin: 0 clamp(24px, 5vw, 80px) clamp(48px, 6vw, 96px);
 }
 .project-detail-section[data-project="Altroo"] .branding-heading,
 .project-detail-section[data-project="Altroo"] .branding-content {
 	display: grid;
-	grid-template-columns: 200px minmax(0, 1fr);
+	grid-template-columns: clamp(140px, 14vw, 200px) minmax(0, 1fr);
 }
 .project-detail-section[data-project="Altroo"] .branding-heading {
 	align-items: baseline;
@@ -309,7 +310,8 @@
 .project-detail-section[data-project="Altroo"] .branding-hero,
 .project-detail-section[data-project="Altroo"] .branding-system {
 	position: relative;
-	min-height: 400px;
+	aspect-ratio: 1 / 1;
+	min-height: 0;
 	margin: 0;
 }
 .project-detail-section[data-project="Altroo"] .branding-hero img,
@@ -325,14 +327,12 @@
    ============================================ */
 .project-detail-section[data-project="Altroo"] .project-app {
 	position: relative;
-	margin-bottom: 60px;
-	margin-left: 64px;
-	margin-right: 64px;
+	margin: 0 clamp(24px, 5vw, 80px) clamp(48px, 6vw, 96px);
 }
 .project-detail-section[data-project="Altroo"] .app-heading,
 .project-detail-section[data-project="Altroo"] .app-content {
 	display: grid;
-	grid-template-columns: 200px minmax(0, 1fr);
+	grid-template-columns: clamp(140px, 14vw, 200px) minmax(0, 1fr);
 }
 .project-detail-section[data-project="Altroo"] .app-heading {
 	align-items: baseline;
@@ -346,13 +346,11 @@
 	line-height: 1;
 	color: var(--altrooBlue);
 }
-
 .project-detail-section[data-project="Altroo"] .app-gallery {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
 	gap: 16px;
 }
-
 .project-detail-section[data-project="Altroo"] .app-image {
 	position: relative;
 	display: block;
@@ -360,12 +358,10 @@
 	margin: 0;
 	overflow: hidden;
 }
-
 .project-detail-section[data-project="Altroo"] .app-image-main {
 	aspect-ratio: 2502 / 1518;
 	background: var(--altrooTealLight);
 }
-
 .project-detail-section[data-project="Altroo"] .app-image-main > img {
 	position: absolute;
 	inset: 0;
@@ -374,17 +370,14 @@
 	height: 100%;
 	object-fit: cover;
 }
-
 .project-detail-section[data-project="Altroo"] .app-image-main > img:first-child {
 	z-index: 2;
 	object-fit: contain;
 	object-position: center bottom;
 }
-
 .project-detail-section[data-project="Altroo"] .app-image-main > img:nth-child(2) {
 	z-index: 1;
 }
-
 .project-detail-section[data-project="Altroo"] .app-copy {
 	position: absolute;
 	left: 4.6%;
@@ -397,7 +390,6 @@
 	line-height: 1.45;
 	color: var(--text);
 }
-
 .project-detail-section[data-project="Altroo"] .app-link {
 	position: absolute;
 	right: 3.8%;
@@ -418,40 +410,110 @@
 	color: #fff;
 	transition: transform 180ms ease, background-color 180ms ease;
 }
-
 .project-detail-section[data-project="Altroo"] .app-link:hover,
 .project-detail-section[data-project="Altroo"] .app-link:focus-visible {
 	transform: translateY(-5px);
 	background-color: #05615B;
 }
-
 .project-detail-section[data-project="Altroo"] .app-gallery-secondary {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 16px;
+	gap: clamp(8px, 1.5vw, 16px);
 }
-
 .project-detail-section[data-project="Altroo"] .app-image-secondary img {
 	display: block;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
-
 .project-detail-section[data-project="Altroo"] .project-links {
-	margin-bottom: 120px;
-	max-width: fill-available;
-	margin-left: 120px;
-	margin-right: 120px;
+	margin-bottom: clamp(48px, 8vw, 120px);
+	max-width: 100%;
+	margin-left: clamp(24px, 5vw, 80px);
+	margin-right: clamp(24px, 5vw, 80px);
 	display: flex;
 	flex-direction: column;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+.project-detail-section[data-project="Altroo"] .project-links,
+.project-detail-section[data-project="Altroo"] .links-section {
+	position: relative;
+	margin: 0 0 16px;
+	padding: clamp(28px, 4vw, 56px) clamp(24px, 12vw, 180px);
+	border-radius: 24px;
+	background: var(--surface);
+}
+
+.project-detail-section[data-project="Altroo"] .links-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	column-gap: 0;
+	align-items: center;
+}
+
+.project-detail-section[data-project="Altroo"] .links-card {
+	display: block;
+	min-width: 0;
+	text-align: center;
+	color: var(--text);
+	transition: transform 180ms ease, color 180ms ease;
+}
+
+.project-detail-section[data-project="Altroo"] .links-card h3 {
+	margin: 0 0 14px;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(14px, 1.3vw, 20px);
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.project-detail-section[data-project="Altroo"] .links-card p {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(12px, 1vw, 18px);
+	font-weight: 500;
+	line-height: 1.2;
+	color: var(--text-secondary);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.project-detail-section[data-project="Altroo"] .links-card:hover,
+.project-detail-section[data-project="Altroo"] .links-card:focus-visible {
+	transform: translateY(-4px);
+	color: var(--altrooBlue);
 }
 
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 
+@media (max-width: 1100px) {
+	.project-detail-section[data-project="Altroo"] .workflow-process {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.project-detail-section[data-project="Altroo"] .workflow-tags span {
+		font-size: clamp(14px, 1.5vw, 18px);
+	}
+}
+
 @media (max-width: 768px) {
+	.project-detail-section[data-project="Altroo"] .links-section,
+	.project-detail-section[data-project="Altroo"] .project-links {
+		margin-bottom: 16px;
+		padding: 32px 24px;
+		border-radius: 18px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .links-grid {
+		grid-template-columns: 1fr;
+		gap: 28px;
+	}
+
 	.project-detail-section[data-project="Altroo"] .project-app {
 		margin: 0 24px 80px;
 	}
@@ -496,7 +558,7 @@
 	}
 
 	.project-detail-section[data-project="Altroo"] .branding-hero {
-		min-height: 500px;
+		min-height: 0;
 	}
 
 	.project-detail-section[data-project="Altroo"] .branding-details {
@@ -535,11 +597,13 @@
 	}
 
 	.project-detail-section[data-project="Altroo"] .workflow-gallery {
-		grid-template-columns: 1fr;
+		grid-template-columns: minmax(0, 935fr) minmax(0, 1535fr);
+		gap: 32px;
 	}
 
 	.project-detail-section[data-project="Altroo"] .workflow-image {
-		height: 360px;
+		min-height: 0;
+		height: auto;
 	}
 
 	.project-detail-section[data-project="Altroo"] .project-sobre {
@@ -562,7 +626,7 @@
 
 	.project-detail-section[data-project="Altroo"] .sobre-copy p {
 		margin-bottom: 32px;
-		font-size: 22px;
+		font-size: clamp(16px, 2.5vw, 20px);
 	}
 
 	.project-detail-section[data-project="Altroo"] .sobre-tags span {
@@ -570,7 +634,7 @@
 	}
 
 	.project-detail-section[data-project="Altroo"] .project-hero {
-		min-height: 500px;
+		min-height: 360px;
 		padding: 40px 20px 30px;
 	}
 
@@ -604,6 +668,55 @@
 	}
 }
 
+@media (max-width: 600px) {
+	.project-detail-section[data-project="Altroo"] .project-problem-objective {
+		grid-template-columns: 1fr;
+		margin-inline: 16px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .sobre-heading,
+	.project-detail-section[data-project="Altroo"] .sobre-content,
+	.project-detail-section[data-project="Altroo"] .workflow-heading,
+	.project-detail-section[data-project="Altroo"] .branding-heading,
+	.project-detail-section[data-project="Altroo"] .app-heading {
+		display: block;
+	}
+
+	.project-detail-section[data-project="Altroo"] .sobre-heading h2,
+	.project-detail-section[data-project="Altroo"] .workflow-heading h2,
+	.project-detail-section[data-project="Altroo"] .branding-heading h2,
+	.project-detail-section[data-project="Altroo"] .app-heading h2 {
+		display: inline;
+		margin-left: 16px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .sobre-content {
+		margin-top: 28px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .sobre-icon {
+		margin-bottom: 28px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .workflow-heading,
+	.project-detail-section[data-project="Altroo"] .branding-heading,
+	.project-detail-section[data-project="Altroo"] .app-heading {
+		margin-bottom: 28px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .workflow-process {
+		grid-template-columns: 1fr;
+	}
+
+	.project-detail-section[data-project="Altroo"] .app-image-main {
+		aspect-ratio: 4 / 3;
+	}
+
+	.project-detail-section[data-project="Altroo"] .app-copy {
+		font-size: clamp(8px, 2.4vw, 12px);
+	}
+}
+
 @media (max-width: 480px) {
 	.project-detail-section[data-project="Altroo"] .project-branding {
 		margin: 0 16px 80px;
@@ -614,7 +727,7 @@
 	}
 
 	.project-detail-section[data-project="Altroo"] .branding-hero {
-		min-height: 360px;
+		min-height: 0;
 	}
 
 	.project-detail-section[data-project="Altroo"] .branding-type {
@@ -671,25 +784,15 @@
 	}
 
 	.project-detail-section[data-project="Altroo"] .workflow-image {
-		height: 280px;
+		height: auto;
 	}
 
 	.project-detail-section[data-project="Altroo"] .project-sobre {
 		margin: 56px 16px 80px;
 	}
 
-	.project-detail-section[data-project="Altroo"] .sobre-heading,
-	.project-detail-section[data-project="Altroo"] .sobre-content {
-		display: block;
-	}
-
 	.project-detail-section[data-project="Altroo"] .sobre-heading {
 		margin-bottom: 28px;
-	}
-
-	.project-detail-section[data-project="Altroo"] .sobre-heading h2 {
-		display: inline;
-		margin-left: 20px;
 	}
 
 	.project-detail-section[data-project="Altroo"] .sobre-icon {
@@ -697,11 +800,11 @@
 	}
 
 	.project-detail-section[data-project="Altroo"] .sobre-copy p {
-		font-size: 20px;
+		font-size: 16px;
 	}
 
 	.project-detail-section[data-project="Altroo"] .project-hero {
-		min-height: 400px;
+		min-height: 300px;
 		padding: 30px 16px 20px;
 	}
 
