@@ -303,186 +303,141 @@
 .project-detail-section[data-project="Altroo"] .branding-layout {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-	gap: 16px;
+	gap: 24px;
 }
+
 .project-detail-section[data-project="Altroo"] .branding-hero,
-.project-detail-section[data-project="Altroo"] .branding-panel {
-	border-radius: 20px;
-	overflow: hidden;
-}
-.project-detail-section[data-project="Altroo"] .branding-hero {
+.project-detail-section[data-project="Altroo"] .branding-system {
 	position: relative;
-	min-height: 600px;
+	min-height: 400px;
 	margin: 0;
 }
-.project-detail-section[data-project="Altroo"] .branding-hero img {
+.project-detail-section[data-project="Altroo"] .branding-hero img,
+.project-detail-section[data-project="Altroo"] .branding-system img {
 	display: block;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
 
-.project-detail-section[data-project="Altroo"] .branding-details {
-	display: grid;
-	grid-template-rows: 1fr 1fr 0.82fr;
-	gap: 14px;
-}
-
-.project-detail-section[data-project="Altroo"] .branding-panel {
-	background: #ffffff;
-}
-
-.project-detail-section[data-project="Altroo"] .branding-type {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 28px;
-	padding-bottom: 48px;
-	padding-top: 48px;
-	padding-left: 64px;
-	padding-right: 64px;
-}
-
-.project-detail-section[data-project="Altroo"] .branding-type > div + div {
-	border-left: 1px solid #dfe3e6;
-	padding-left: 32px;
-}
-
-.project-detail-section[data-project="Altroo"] .branding-panel h3 {
-	margin-bottom: 24px;
-	font-family: "Roboto", sans-serif;
-	font-size: clamp(16px, 1.4vw, 21px);
-	font-weight: 400;
-	color: var(--altrooTeal);
-}
-
-.project-detail-section[data-project="Altroo"] .branding-type-primary,
-.project-detail-section[data-project="Altroo"] .branding-type-secondary {
-	display: grid;
-	grid-template-columns:minmax(0, 1fr);
-	align-content: start;
-	font-family: "Roboto", sans-serif;
-}
-
-.project-detail-section[data-project="Altroo"] .branding-type-primary h3,
-.project-detail-section[data-project="Altroo"] .branding-type-secondary h3 {
-	display: block;
-	margin-bottom: 24px;
-}
-
-.project-detail-section[data-project="Altroo"] .type-sample-weights-size {
-	display: grid;
-	grid-template-columns: repeat(1, max-content);
-	gap: 24px;
-	align-items: start;
-}
-
-.project-detail-section[data-project="Altroo"] .type-sample-primary {
-	font-family: "Baloo 2", sans-serif;
-	font-size: 54px;
-	font-weight: 700;
-	line-height: 1.5;
-	color: var(--text);
-}
-.project-detail-section[data-project="Altroo"] .type-sample-secondary {
-	font-family: "SF Pro Rounded", sans-serif;
-	font-size: 54px;
-	font-weight: 500;
-	line-height: 1.5;
-	color: var(--text);
-}
-
-.project-detail-section[data-project="Altroo"] .type-weights-primary {
-	display: grid;
-	grid-template-columns: repeat(3, max-content);
-	justify-content: space-between;
-	gap: 8px;
-	white-space: nowrap;
-	font-size: clamp(12px, 1vw, 14px);
-	color: var(--text);
-}
-.project-detail-section[data-project="Altroo"] .branding-type-primary .type-weights .span {
-	font-family: "Baloo 2", sans-serif;
-	font-weight: 400;
-}
-
-.project-detail-section[data-project="Altroo"] .type-weights-secondary {
-	display: grid;
-	grid-template-columns: repeat(3, max-content);
-	justify-content: space-between;
-	gap: 8px;
-	white-space: nowrap;
-	font-size: clamp(12px, 1vw, 14px);
-	color: var(--text);
-}
-.project-detail-section[data-project="Altroo"] .branding-type-secondary .type-weights .span {
-	font-family: "SF Pro Rounded", sans-serif;
-	font-weight: 400;
-}
-
-.project-detail-section[data-project="Altroo"] .type-size {
-	display: grid;
-	grid-template-columns: repeat(5, max-content);
-	justify-content: space-between;
-	align-items: baseline;
-	gap: 8px;
-	margin-top: 12px;
-	color: var(--text-secondary);
-}
-
-.project-detail-section[data-project="Altroo"] .type-size span {
-	display: inline-block;
-	font-family: "Roboto", sans-serif;
-	font-size: clamp(12px, 1vw, 14px);
-	font-weight: 300;
-}
-
-.project-detail-section[data-project="Altroo"] .branding-colors {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	padding: 32px 22px;
-	gap: 0;
-}
-
-.project-detail-section[data-project="Altroo"] .color-swatch {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	min-width: 0;
-	padding-top: 78px;
-	background: var(--swatch);
-	font: 12px "Roboto", sans-serif;
-	color: var(--text);
-}
-
-.project-detail-section[data-project="Altroo"] .color-swatch span,
-.project-detail-section[data-project="Altroo"] .color-swatch small {
-	padding-left: 2px;
-	background: #ffffff;
-}
-
-.project-detail-section[data-project="Altroo"] .color-swatch span {
-	padding-top: 12px;
-	font-weight: 500;
-}
-
-.project-detail-section[data-project="Altroo"] .color-swatch small {
-	padding-bottom: 4px;
-}
-
-.project-detail-section[data-project="Altroo"] .branding-logo {
-	display: grid;
-	place-items: center;
-	background: var(--altrooTeal);
-}
-.project-detail-section[data-project="Altroo"] .branding-logo img {
-	width: min(70%, 330px);
-	height: auto;
-	filter: brightness(0) invert(1);
-}
-
 /* ============================================
    04 APP
    ============================================ */
+.project-detail-section[data-project="Altroo"] .project-app {
+	position: relative;
+	margin-bottom: 60px;
+	margin-left: 64px;
+	margin-right: 64px;
+}
+.project-detail-section[data-project="Altroo"] .app-heading,
+.project-detail-section[data-project="Altroo"] .app-content {
+	display: grid;
+	grid-template-columns: 200px minmax(0, 1fr);
+}
+.project-detail-section[data-project="Altroo"] .app-heading {
+	align-items: baseline;
+	margin-bottom: 64px;
+}
+.project-detail-section[data-project="Altroo"] .app-number,
+.project-detail-section[data-project="Altroo"] .app-heading h2 {
+	font-family: "Helvetica Neue Medium Extended", sans-serif;
+	font-size: clamp(24px, 3vw, 36px);
+	font-weight: 500;
+	line-height: 1;
+	color: var(--altrooBlue);
+}
+
+.project-detail-section[data-project="Altroo"] .app-gallery {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 16px;
+}
+
+.project-detail-section[data-project="Altroo"] .app-image {
+	position: relative;
+	display: block;
+	min-width: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.project-detail-section[data-project="Altroo"] .app-image-main {
+	aspect-ratio: 2502 / 1518;
+	background: var(--altrooTealLight);
+}
+
+.project-detail-section[data-project="Altroo"] .app-image-main > img {
+	position: absolute;
+	inset: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.project-detail-section[data-project="Altroo"] .app-image-main > img:first-child {
+	z-index: 2;
+	object-fit: contain;
+	object-position: center bottom;
+}
+
+.project-detail-section[data-project="Altroo"] .app-image-main > img:nth-child(2) {
+	z-index: 1;
+}
+
+.project-detail-section[data-project="Altroo"] .app-copy {
+	position: absolute;
+	left: 4.6%;
+	bottom: 10.2%;
+	z-index: 3;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(9px, 1.15vw, 16px);
+	font-weight: 500;
+	line-height: 1.45;
+	color: var(--text);
+}
+
+.project-detail-section[data-project="Altroo"] .app-link {
+	position: absolute;
+	right: 3.8%;
+	bottom: 10.1%;
+	z-index: 3;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 98px;
+	min-height: 27px;
+	padding: 7px 15px;
+	border-radius: 5px;
+	background: var(--altrooTeal);
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(9px, 1.1vw, 15px);
+	font-weight: 500;
+	line-height: 1;
+	color: #fff;
+	transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.project-detail-section[data-project="Altroo"] .app-link:hover,
+.project-detail-section[data-project="Altroo"] .app-link:focus-visible {
+	transform: translateY(-5px);
+	background-color: #05615B;
+}
+
+.project-detail-section[data-project="Altroo"] .app-gallery-secondary {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.project-detail-section[data-project="Altroo"] .app-image-secondary img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 .project-detail-section[data-project="Altroo"] .project-links {
 	margin-bottom: 120px;
 	max-width: fill-available;
@@ -497,6 +452,35 @@
    ============================================ */
 
 @media (max-width: 768px) {
+	.project-detail-section[data-project="Altroo"] .project-app {
+		margin: 0 24px 80px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .app-heading {
+		grid-template-columns: 48px minmax(0, 1fr);
+		gap: 14px;
+		margin: 0 0 20px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .app-gallery-secondary {
+		gap: 8px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .app-copy {
+		left: 5%;
+		bottom: 9%;
+		font-size: clamp(8px, 2vw, 13px);
+	}
+
+	.project-detail-section[data-project="Altroo"] .app-link {
+		right: 5%;
+		bottom: 9%;
+		min-width: 82px;
+		min-height: 24px;
+		padding: 6px 10px;
+		font-size: clamp(8px, 1.8vw, 12px);
+	}
+
 	.project-detail-section[data-project="Altroo"] .project-branding {
 		margin: 0 24px 96px;
 		padding: 0;
