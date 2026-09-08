@@ -49,21 +49,43 @@ button {
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
-    font-family: "Roboto";
-    src: url("../assets/fonts/roboto.woff2") format("woff2");
-    font-weight: 500;
+    font-family: "NewYork";
+    src: url("../assets/fonts/NewYork.woff2") format("woff2");
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "NewYork";
-    src: url("../assets/fonts/NewYork.woff2") format("woff2");
-    font-weight: 100;
+    font-family: "RobotoBold";
+    src: url("../assets/fonts/RobotoBold.woff2") format("woff2");
     font-style: normal;
     font-display: swap;
+}
+@font-face {
+    font-family: "RobotoMedium";
+    src: url("../assets/fonts/RobotoMedium.woff2") format("woff2");
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "RobotoRegular";
+    src: url("../assets/fonts/RobotoRegular.woff2") format("woff2");
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SFProDisplayLight";
+    src: url("../assets/fonts/SFProDisplayLight.woff2") format("woff2");
+    font-style: normal;
+    font-display: swap; 
+}
+@font-face {
+    font-family: "SFProDisplayRegularItalic";
+    src: url("../assets/fonts/SFProDisplayRegularItalic.woff2") format("woff2");
+    font-style: italic;
+    font-display: swap; 
 }
 
 @font-face {
@@ -72,25 +94,16 @@ button {
     font-style: normal;
     font-display: swap; 
 }
-
 @font-face {
     font-family: "SF Pro Rounded";
     src: url("../assets/fonts/SFProRounded.woff2") format("woff2");
     font-style: normal;
     font-display: swap; 
 }
-
 @font-face {
     font-family: "SF Pro Rounded Thin";
     src: url("../assets/fonts/SFProRoundedThin.woff2") format("woff2");
     font-weight: 700;
-    font-style: normal;
-    font-display: swap; 
-}
-
-@font-face {
-    font-family: "SF Pro Display Regular";
-    src: url("../assets/fonts/SFProDisplayRegular.woff2") format("woff2");
     font-style: normal;
     font-display: swap; 
 }
