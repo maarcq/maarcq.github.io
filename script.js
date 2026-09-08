@@ -59,6 +59,7 @@ if (document.readyState === "loading") {
 
 const tabLinks = document.querySelectorAll(".nav-link");
 const tabPanels = document.querySelectorAll(".tab-panel");
+
 const activateTab = (tabName) => {
 	const validTabs = ["home", "projetos", "sobre"];
 	const validTab = validTabs.includes(tabName) ? tabName : "home";
@@ -66,6 +67,7 @@ const activateTab = (tabName) => {
 	// Get fresh references to tab panels and links
 	const currentTabPanels = document.querySelectorAll(".tab-panel");
 	const currentTabLinks = document.querySelectorAll(".nav-link");
+
 	currentTabPanels.forEach((panel) => {
 		panel.classList.toggle("active", panel.id === validTab);
 	});
@@ -74,6 +76,18 @@ const activateTab = (tabName) => {
 		const isActive = link.dataset.tab === validTab;
 		link.classList.toggle("active", isActive);
 	});
+
+	// Move navigation indicator
+	const activeLink = document.querySelector(
+    	`.nav-link[data-tab="${validTab}"]`
+	);
+
+	const indicator = document.querySelector(".nav-indicator");
+
+	if (activeLink && indicator) {
+    	indicator.style.width = `${activeLink.offsetWidth}px`;
+    	indicator.style.transform = `translateX(${activeLink.offsetLeft}px)`;
+	}
 
 	if (window.history.replaceState) {
 		window.history.replaceState(null, "", `#${validTab}`);
@@ -111,7 +125,7 @@ const translations = {
 			iosDev: "iOS Developer",
 		},
 		projects: {
-			title: "Projetos",
+			title: "Projetos em destaque",
 			subtitle: "UX/UI Designer | Product Designer | Developer",
 			view: "Ver projeto",
 		},
@@ -167,7 +181,7 @@ const translations = {
 			iosDev: "iOS Developer",
 		},
 		projects: {
-			title: "Projects",
+			title: "Featured projects",
 			subtitle: "UX/UI Designer | Product Designer | Developer",
 			view: "View project",
 		},
@@ -224,7 +238,7 @@ const applyLanguage = (language, shouldAnimate = false) => {
 
 	document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
 	document.title = language === "pt"
-		? "Marcelle Queiroz — UX/UI Designer & iOS Dev"
+		? "Marcelle Queiroz — UX/UI Designer & iOS Developer"
 		: "Marcelle Queiroz — UX/UI Designer & iOS Developer";
 
 	document.querySelectorAll("[data-i18n], [data-i18n-html]").forEach((element) => {
