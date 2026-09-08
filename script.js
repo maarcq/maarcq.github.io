@@ -12,8 +12,8 @@ const loadPages = async () => {
 		const homeResponse = await fetch("pages/home.html");
 		const homeHTML = await homeResponse.text();
 
-		// Load projects page content
-		const projectsResponse = await fetch("pages/projects-content.html");
+		// Load projects page
+		const projectsResponse = await fetch("pages/projects.html");
 		const projectsHTML = await projectsResponse.text();
 
 		// Load about page

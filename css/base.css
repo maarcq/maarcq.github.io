@@ -111,3 +111,11 @@ button {
 body {
     background-color: var(--background);
 }
+
+ .tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
