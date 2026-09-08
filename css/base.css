@@ -43,10 +43,10 @@ button {
 }
 
 @font-face {
-    font-family: "Helvetica Neue Medium Extended";
-    src: url("../assets/fonts/helvetica-neue-medium-extended.woff2") format("woff2");
+    font-family: "HelveticaNeueMediumExtended";
+    src: url("../assets/fonts/HelveticaNeueMediumExtended.woff2") format("woff2");
     font-weight: 500;
-    font-style: normal;
+    font-style: medium;
     font-display: swap;
 }
 @font-face {

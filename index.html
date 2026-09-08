@@ -12,7 +12,7 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- NAVBAR -->
     <header class="header">
 
         <div class="language-switch">
@@ -24,17 +24,9 @@
             <a href="#home" class="nav-link active" data-tab="home">
                 Home
             </a>
-            <div class="projects-nav-wrap">
-                <a href="#projetos" class="nav-link project-nav" data-tab="projetos">
-                    <span data-i18n="nav.projects">Projetos</span>
-                </a>
-                <div class="projects-modal" id="projects-modal" aria-label="Lista de projetos">
-                    <button type="button" class="project-option" data-project="Altroo">Altroo</button>
-                    <button type="button" class="project-option" data-project="Hanka">Hanka</button>
-                    <button type="button" class="project-option" data-project="Monitor Pronatec">Monitor Pronatec</button>
-                    <button type="button" class="project-option" data-project="Into The Cauldron">Into The Cauldron</button>
-                </div>
-            </div>
+            <a href="#projetos" class="nav-link" data-tab="projetos">
+                <span data-i18n="nav.projects">Projetos</span>
+            </a>
             <a href="#sobre" class="nav-link" data-tab="sobre">
                 <span data-i18n="nav.about">Sobre</span>
             </a>
@@ -46,14 +38,35 @@
 
     </header>
 
-
     <main id="page-content">
         <!-- Home page content loads here -->
     </main>
 
-    <!-- Project Detail Section -->
-    <section id="project-detail" class="tab-panel project-detail-section" aria-live="polite"></section>
+     <!-- CONTACT SECTION -->
+    <section id="contato" class="contact-section">
+        <h2 data-i18n="contact.title">Entre em contato comigo</h2>
+        <div class="contact-grid">
+            <a href="tel:+5585999590533" class="contact-card">
+                <h3 data-i18n="contact.phone">Celular</h3>
+                <p>+55 (85) 99959-0533</p>
+            </a>
 
+            <a href="mailto:contato.marcellequeiroz@gmail.com" class="contact-card">
+                <h3 data-i18n="contact.email">Email</h3>
+                <p>contato.marcellequeiroz@gmail.com</p>
+            </a>
+
+            <a href="https://www.linkedin.com/in/marcellerq/" class="contact-card" target="_blank" rel="noopener noreferrer">
+                <h3>LinkedIn</h3>
+                <p>linkedin.com/in/marcelleq</p>
+            </a>
+
+            <a href="https://github.com/maarcq" class="contact-card" target="_blank" rel="noopener noreferrer">
+                <h3>GitHub</h3>
+                <p>github.com/maarcq</p>
+            </a>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -65,7 +78,6 @@
         </span>
 
     </footer>
-
 
     <script src="script.js"></script>
 

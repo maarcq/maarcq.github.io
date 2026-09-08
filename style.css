@@ -1,14 +1,15 @@
 @import url("css/base.css");
+@import url("css/navBar.css");
+@import url("css/footer.css");
 @import url("css/responsive.css");
 
 /* ===HOME=== */
-@import url("css/HOME/home.css");
 @import url("css/HOME/hero.css");
 @import url("css/HOME/projects.css");
 @import url("css/HOME/experience.css");
-@import url("css/HOME/contact.css");
 
 /* ===PROJECTS=== */
+@import url("css/PROJECTS/projectsPhone.css");
 @import url("css/PROJECTS/Altroo/altroo.css");
 @import url("css/PROJECTS/Hanka/hanka.css");
 @import url("css/PROJECTS/Monitor Pronatec/monitor-pronatec.css");
