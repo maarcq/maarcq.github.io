@@ -1,6 +1,9 @@
 .contact-section {
-    margin: 24px;
-    padding: 52px;
+    margin: 0 24px 24px;
+    padding-top: clamp(24px, 5vw, 40px);
+    padding-right: clamp(24px, 5vw, 40px);
+    padding-left: clamp(24px, 5vw, 40px);
+    padding-bottom: clamp(24px, 5vw, 40px);
     background: var(--surface);
     border-radius: var(--radius);
     text-align: center;
@@ -8,10 +11,10 @@
 
 .contact-section > h2 {
     font-family: "Helvetica Neue Medium Extended", sans-serif;
-    font-size: 24px;
-    font-weight: 500;
+    font-size: clamp(16px, 4vw, 24px);
+    font-weight: 200;
     color: var(--text);
-    margin-bottom: 40px;
+    margin-bottom: clamp(24px, 5vw, 40px);
 }
 
 .contact-grid {
@@ -21,26 +24,27 @@
 }
 
 .contact-card {
-    border: 1px solid var(--border);
+    border: 0.5px solid var(--border);
     border-radius: 6px;
     padding: 24px;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .contact-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    border-color: var(--purple);
 }
 
 .contact-card h3 {
-    font-family: "RobotoRegular", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 24px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: clamp(14px, 2vw, 18px);
+    margin-bottom: clamp(16px, 5vw, 24px);
 }
 
 .contact-card p {
-    font-family: "RobotoRegular", sans-serif;
-    font-size: 12px;
-    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: clamp(12px, 2vw, 14px);
     text-decoration: underline;
 }
