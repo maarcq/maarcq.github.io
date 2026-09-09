@@ -43,7 +43,7 @@ button {
 }
 
 @font-face {
-    font-family: "HelveticaNeueMediumExtended";
+    font-family: "Helvetica Neue Medium Extended";
     src: url("../assets/fonts/HelveticaNeueMediumExtended.woff2") format("woff2");
     font-weight: 500;
     font-style: medium;
@@ -57,32 +57,31 @@ button {
 }
 
 @font-face {
-    font-family: "RobotoBold";
+    font-family: "Roboto";
     src: url("../assets/fonts/RobotoBold.woff2") format("woff2");
-    font-style: normal;
-    font-display: swap;
+    font-weight: 700;
 }
 @font-face {
-    font-family: "RobotoMedium";
+    font-family: "Roboto";
     src: url("../assets/fonts/RobotoMedium.woff2") format("woff2");
-    font-style: normal;
-    font-display: swap;
+    font-weight: 500;
 }
 @font-face {
-    font-family: "RobotoRegular";
+    font-family: "Roboto";
     src: url("../assets/fonts/RobotoRegular.woff2") format("woff2");
     font-style: normal;
+    font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "SFProDisplayLight";
+    font-family: "SF Pro Display Light";
     src: url("../assets/fonts/SFProDisplayLight.woff2") format("woff2");
     font-style: normal;
     font-display: swap; 
 }
 @font-face {
-    font-family: "SFProDisplayRegularItalic";
+    font-family: "SF ProDisplay Regular Italic";
     src: url("../assets/fonts/SFProDisplayRegularItalic.woff2") format("woff2");
     font-style: italic;
     font-display: swap; 

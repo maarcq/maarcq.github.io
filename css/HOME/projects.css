@@ -1,6 +1,9 @@
 .projects-section {
     margin: 0 24px 24px;
-    padding: 52px 26px 48px;
+    padding-top: clamp(24px, 5vw, 40px);
+    padding-right: clamp(16px, 4vw, 24px);
+    padding-left: clamp(16px, 4vw, 24px);
+    padding-bottom: clamp(24px, 5vw, 40px);
     background: var(--surface);
     border-radius: var(--radius);
     overflow: hidden;
@@ -8,22 +11,23 @@
 
 .section-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: clamp(24px, 5vw, 40px);
 }
 
 .section-header h2 {
     font-family: "Helvetica Neue Medium Extended", sans-serif;
-    font-size: 24px;
-    font-weight: 500;
+    font-weight: 200;
+    font-size: clamp(18px, 5vw, 30px);
     color: var(--text);
-    margin-bottom: 16px;
+    margin-bottom: clamp(14px, 4vw, 18px);
 }
 
 .section-header p {
-    font-family: "RobotoRegular", sans-serif;
-    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: clamp(12px, 5vw, 16px);
     color: var(--text-secondary);
-    margin-bottom: 40px;
+    margin-bottom: clamp(32px, 10vw, 48px);
 }
 
 .projects-grid {
@@ -45,8 +49,8 @@
 }
 
 .home-page .project-card {
-    flex: 0 0 min(280px, calc(100vw - 48px));
-    width: min(280px, calc(100vw - 48px));
+    flex: 0 0 min(260px, calc(100vw - 48px));
+    width: min(260px, calc(100vw - 48px));
 }
 
 @keyframes projects-carousel {
@@ -58,7 +62,7 @@
     position: relative;
     aspect-ratio: 3 / 4;
     overflow: hidden;
-    border-radius: 24px;
+    border-radius: 16px;
     isolation: isolate;
     box-shadow: 0 8px 24px rgba(37, 20, 39, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -85,7 +89,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 16px 16px 12px;
+    padding: 16px 16px 10px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4));
     backdrop-filter: blur(30px) saturate(175%);
     -webkit-backdrop-filter: blur(30px) saturate(175%);
@@ -94,26 +98,29 @@
 }
 
 .project-info h3 {
-    font-family: "Helvetica Neue Medium Extended", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
     color: var(--text);
-    font-size: 18px;
-    margin-bottom: 16px;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    margin-bottom: 12px;
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
+    gap: 6px;
+    margin-bottom: 18px;
 }
 
 .tags span {
     background: white;
-    border: 0.5px solid var(--purple);
+    border: 0.6px solid var(--purple);
     border-radius: 4px;
-    padding: 4px 12px;
-    font-family: "RobotoRegular", sans-serif;
+    padding: 4px 10px;
+    font-family: "SF Pro Display Light", sans-serif;
     font-size: 12px;
+    font-weight: 900;
 }
 
 .project-button {
@@ -122,7 +129,8 @@
     padding: 12px 8px;
     border-radius: 28px;
     text-align: center;
-    font: 12px "RobotoRegular", sans-serif;
+    font: 12px "Roboto", sans-serif;
+    font-weight: 400;
     color: white;
     background: var(--purple);
 }

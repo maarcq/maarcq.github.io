@@ -3,7 +3,8 @@
     margin: 24px;
     padding-left: 64px;
     padding-right: 64px;
-    font-family: "RobotoRegular", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     font-size: clamp(10px, 3vw, 14px);
     background: var(--surface);
     border-radius: var(--radius);
@@ -39,7 +40,8 @@
     padding: 6px 16px;
     border-radius: 20px;
     font-size: clamp(10px, 3vw, 14px);
-    font-family: "RobotoRegular", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     cursor: pointer;
     color: var(--text);
 }
@@ -75,7 +77,8 @@
 }
 
 .resume-button {
-    font-family: "RobotoRegular", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     font-size: clamp(10px, 3vw, 14px);
     background: var(--purple);
     color: white;

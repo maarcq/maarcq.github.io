@@ -1,6 +1,9 @@
 .experience-section {
-  margin: 24px;
-  padding: 52px;
+  margin: 0 24px 24px;
+  padding-top: clamp(24px, 5vw, 40px);
+  padding-right: clamp(24px, 5vw, 40px);
+  padding-left: clamp(24px, 5vw, 40px);
+  padding-bottom: clamp(24px, 5vw, 40px);
   background: var(--surface);
   border-radius: var(--radius);
   text-align: left;
@@ -8,10 +11,10 @@
 
 .experience-section h2 {
   font-family: "Helvetica Neue Medium Extended", sans-serif;
-  font-size: clamp(18px, 1.5vw, 24px);
-  font-weight: 500;
+  font-size: clamp(18px, 5vw, 30px);
+  font-weight: 200;
   color: var(--text);
-  margin-bottom: 40px;
+  margin-bottom: clamp(24px, 5vw, 40px);
 }
 
 .experience-grid {
@@ -37,33 +40,36 @@
 }
 
 .experience-card h3 {
-  font-family: "RobotoBold", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   font-size: clamp(14px, 2vw, 18px);
-  font-weight: 800;
   color: var(--text);
+  margin-bottom: 8px;
 }
 
 .experience-card h4 {
   font-family: "Roboto", sans-serif;
-  font-size: clamp(14px, 2vw, 18px);
-  font-weight: 500;
+  font-weight: 400;
+  font-size: clamp(10px, 2vw, 14px);
   color: var(--text);
-  margin-bottom: 0px;
+  margin-bottom: 12px;
 }
 
 .year {
   background: var(--purple);
   color: #ffffff;
-  padding: 4px 10px;
+  padding: 6px 8px;
   border-radius: 6px;
-  font-size: clamp(12px, 1.5vw, 14px);
-  font-weight: 300;
+  font-family: "Helvetica Neue Medium Extended", sans-serif;
+  font-weight: 30;
+  font-size: clamp(8px, 2vw, 11px);
   white-space: nowrap;
 }
 
 .experience-card p {
   font-family: "Roboto", sans-serif;
-  font-size: clamp(12px, 1.5vw, 13px);
-  font-weight: 50;
+  font-weight: 400;
+  line-height: 1.4;
+  font-size: clamp(10px, 2vw, 13px);
   color: var(--text-secondary);
 }
