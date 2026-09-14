@@ -32,6 +32,69 @@ const loadPages = async () => {
 	}
 };
 
+const projectAppData = [
+	{ name: "Altroo", src: "assets/images/projetcs/AppIcon/Altrooicon.png" },
+	{ name: "Into the Cauldron", src: "assets/images/projetcs/AppIcon/ITCicon.png" },
+	{ name: "Wanty", src: "assets/images/projetcs/AppIcon/Wantyicon.png" },
+	{ name: "Sonharium", src: "assets/images/projetcs/AppIcon/Sonhariumicon.png" },
+	{ name: "Find It", src: "assets/images/projetcs/AppIcon/Finditicon.png" },
+	{ name: "Hanka", src: "assets/images/projetcs/AppIcon/Hankaicon.png" },
+	{ name: "Satty", src: "assets/images/projetcs/AppIcon/Sattyicon.png" },
+	{ name: "Saporo", src: "assets/images/projetcs/AppIcon/Saporoicon.png" },
+	{ name: "Vision", src: "assets/images/projetcs/AppIcon/Visionicon.png" },
+	{ name: "Buzzic", src: "assets/images/projetcs/AppIcon/Buzzicicon.png" },
+	{ name: "Atlantic", src: "assets/images/projetcs/AppIcon/Artlanticicon.png" },
+];
+
+const setupProjectAppGrid = () => {
+	const grid = document.getElementById("project-app-grid");
+	const hoverTitle = document.getElementById("projects-title");
+	const hoverText = document.getElementById("projects-hover-text");
+	const hoverCopy = document.querySelector(".projects-hero-copy");
+	const defaultTitle = "Explore meus<br>projetos";
+	const defaultText = "Clique em um App para<br>descobrir mais.";
+	if (!grid) {
+		return;
+	}
+
+	const updateProjectCopy = (title, text, useHtml = false) => {
+		if (hoverCopy) {
+			hoverCopy.classList.remove("is-changing");
+			void hoverCopy.offsetWidth;
+			hoverCopy.classList.add("is-changing");
+		}
+		if (hoverTitle) {
+			hoverTitle[useHtml ? "innerHTML" : "textContent"] = title;
+		}
+		if (hoverText) {
+			hoverText[useHtml ? "innerHTML" : "textContent"] = text;
+		}
+	};
+
+	if (grid.children.length === 0) {
+		grid.innerHTML = projectAppData.map(({ name, src }) => `
+			<button class="project-app-item" type="button" data-project-text="${name} - projeto em desenvolvimento." aria-label="${name}">
+				<img class="project-app-icon" src="${src}" alt="${name}" loading="lazy">
+				<span class="project-app-name">${name}</span>
+			</button>
+		`).join("");
+	}
+
+	const appItems = grid.querySelectorAll(".project-app-item");
+	appItems.forEach((item) => {
+		const appName = item.getAttribute("aria-label") || item.querySelector(".project-app-name")?.textContent || "Projeto";
+		const description = item.dataset.projectText || "Projeto em desenvolvimento.";
+
+		item.addEventListener("mouseenter", () => {
+			updateProjectCopy(appName, description);
+		});
+	});
+
+	grid.addEventListener("mouseleave", () => {
+		updateProjectCopy(defaultTitle, defaultText, true);
+	});
+};
+
 const reinitializePageScripts = () => {
 	const projectsGrid = document.querySelector(".home-page .projects-grid");
 	if (projectsGrid && !projectsGrid.dataset.carouselReady) {
@@ -43,6 +106,8 @@ const reinitializePageScripts = () => {
 		});
 		projectsGrid.dataset.carouselReady = "true";
 	}
+
+	setupProjectAppGrid();
 
 	// Re-attach event listeners
 	setupTabNavigation();
