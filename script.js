@@ -140,9 +140,13 @@ const reinitializePageScripts = () => {
 
 // Wait for DOM to be ready
 if (document.readyState === "loading") {
-	document.addEventListener("DOMContentLoaded", loadPages);
+	document.addEventListener("DOMContentLoaded", () => {
+		loadPages();
+		setupBackButtons();
+	});
 } else {
 	loadPages();
+	setupBackButtons();
 }
 
 const tabLinks = document.querySelectorAll(".nav-link");
@@ -238,6 +242,24 @@ const setupMobileMenu = () => {
 
 	menu.dataset.ready = "true";
 };
+
+function setupBackButtons() {
+	document.querySelectorAll("[data-go-back]").forEach((button) => {
+		if (button.dataset.ready === "true") {
+			return;
+		}
+
+		button.addEventListener("click", () => {
+			if (window.history.length > 1) {
+				window.history.back();
+				return;
+			}
+
+			window.location.href = "../../index.html#projetos";
+		});
+		button.dataset.ready = "true";
+	});
+}
 
 let currentLanguage = "pt";
 const translations = {

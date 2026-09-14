@@ -59,11 +59,15 @@ button {
 @font-face {
     font-family: "Roboto";
     src: url("../assets/fonts/RobotoBold.woff2") format("woff2");
+    font-style: bold;
+    font-display: swap;
     font-weight: 700;
 }
 @font-face {
     font-family: "Roboto";
     src: url("../assets/fonts/RobotoMedium.woff2") format("woff2");
+    font-style: medium;
+    font-display: swap;
     font-weight: 500;
 }
 @font-face {
@@ -77,7 +81,7 @@ button {
 @font-face {
     font-family: "SF Pro Display";
     src: url("../assets/fonts/SFProDisplayLight.woff2") format("woff2");
-    font-weight: 300;
+    font-weight: 200;
     font-style: light;
     font-display: swap; 
 }
@@ -92,20 +96,21 @@ button {
 @font-face {
     font-family: "Baloo2";
     src: url("../assets/fonts/Baloo2.woff2") format("woff2");
+    font-weight: 400;
     font-style: normal;
     font-display: swap; 
 }
 @font-face {
     font-family: "SF Pro Rounded";
     src: url("../assets/fonts/SFProRounded.woff2") format("woff2");
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
     font-display: swap; 
 }
 @font-face {
     font-family: "SF Pro Rounded";
     src: url("../assets/fonts/SFProRoundedThin.woff2") format("woff2");
-    font-weight: 100;
+    font-weight: 200;
     font-style: thin;
     font-display: swap; 
 }
