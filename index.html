@@ -7,7 +7,7 @@
 
     <title>Marcelle Queiroz — UX/UI Designer & iOS Dev</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=mobile-nav">
 </head>
 
 <body>
@@ -34,11 +34,30 @@
             <span class="nav-indicator"></span>
         </nav>
 
+        <button class="mobile-menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+            <img src="assets/icons/menuIcon.png" alt="">
+        </button>
+
         <a href="https://drive.google.com/file/d/10igtKQ63M4ydT_5mw3jInMhqyHYmSDTR/view?usp=sharing" class="resume-button">
-            <span data-i18n="nav.resume">Baixar currículo</span>
+            <span data-i18n="nav.resume">Currículo</span>
         </a>
 
     </header>
+
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-backdrop" data-mobile-menu-close></div>
+        <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+            <div class="mobile-menu-header">
+                <h2 id="mobile-menu-title">Menu</h2>
+                <button class="mobile-menu-close" type="button" aria-label="Fechar menu" data-mobile-menu-close>&times;</button>
+            </div>
+            <nav class="mobile-navigation" aria-label="Navegação mobile">
+                <a href="#home" class="mobile-nav-link" data-tab="home">Home</a>
+                <a href="#projetos" class="mobile-nav-link" data-tab="projetos">Projetos</a>
+                <a href="#sobre" class="mobile-nav-link" data-tab="sobre">Sobre</a>
+            </nav>
+        </div>
+    </div>
 
     <main id="page-content">
         <!-- Home page content loads here -->

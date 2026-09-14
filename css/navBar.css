@@ -91,6 +91,11 @@
     transform: translateY(-4px);
 }
 
+.mobile-menu-button,
+.mobile-menu {
+    display: none;
+}
+
 .tab-panel {
     display: none;
 }

@@ -75,14 +75,16 @@ button {
 }
 
 @font-face {
-    font-family: "SF Pro Display Light";
+    font-family: "SF Pro Display";
     src: url("../assets/fonts/SFProDisplayLight.woff2") format("woff2");
-    font-style: normal;
+    font-weight: 300;
+    font-style: light;
     font-display: swap; 
 }
 @font-face {
-    font-family: "SF ProDisplay Regular Italic";
+    font-family: "SF Pro Display";
     src: url("../assets/fonts/SFProDisplayRegularItalic.woff2") format("woff2");
+    font-weight: 400;
     font-style: italic;
     font-display: swap; 
 }
@@ -96,14 +98,15 @@ button {
 @font-face {
     font-family: "SF Pro Rounded";
     src: url("../assets/fonts/SFProRounded.woff2") format("woff2");
+    font-weight: 700;
     font-style: normal;
     font-display: swap; 
 }
 @font-face {
-    font-family: "SF Pro Rounded Thin";
+    font-family: "SF Pro Rounded";
     src: url("../assets/fonts/SFProRoundedThin.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
+    font-weight: 100;
+    font-style: thin;
     font-display: swap; 
 }
 

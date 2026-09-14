@@ -93,6 +93,28 @@ const setupProjectAppGrid = () => {
 	grid.addEventListener("mouseleave", () => {
 		updateProjectCopy(defaultTitle, defaultText, true);
 	});
+
+	const isMobile = window.matchMedia("(max-width: 700px)").matches;
+	if (isMobile && !grid.dataset.mobileAutoplay) {
+		let activeIndex = 0;
+		const showNextApp = () => {
+			appItems.forEach((item) => item.classList.remove("is-autoplaying"));
+			const activeItem = appItems[activeIndex];
+			if (!activeItem) {
+				return;
+			}
+
+			const appName = activeItem.getAttribute("aria-label") || activeItem.querySelector(".project-app-name")?.textContent || "Projeto";
+			const description = activeItem.dataset.projectText || "Projeto em desenvolvimento.";
+			activeItem.classList.add("is-autoplaying");
+			updateProjectCopy(appName, description);
+			activeIndex = (activeIndex + 1) % appItems.length;
+		};
+
+		grid.dataset.mobileAutoplay = "true";
+		showNextApp();
+		window.setInterval(showNextApp, 2200);
+	}
 };
 
 const reinitializePageScripts = () => {
@@ -111,6 +133,7 @@ const reinitializePageScripts = () => {
 
 	// Re-attach event listeners
 	setupTabNavigation();
+	setupMobileMenu();
 	setupLanguageButtons();
 	setupCopyCards();
 };
@@ -131,7 +154,7 @@ const activateTab = (tabName) => {
 
 	// Get fresh references to tab panels and links
 	const currentTabPanels = document.querySelectorAll(".tab-panel");
-	const currentTabLinks = document.querySelectorAll(".nav-link");
+	const currentTabLinks = document.querySelectorAll(".nav-link, .mobile-nav-link");
 
 	currentTabPanels.forEach((panel) => {
 		panel.classList.toggle("active", panel.id === validTab);
@@ -174,6 +197,48 @@ const setupTabNavigation = () => {
 	activateTab(initialTab);
 };
 
+const setupMobileMenu = () => {
+	const menu = document.getElementById("mobile-menu");
+	const menuButton = document.querySelector(".mobile-menu-button");
+	const menuLinks = document.querySelectorAll(".mobile-nav-link");
+	if (!menu || !menuButton || menu.dataset.ready === "true") {
+		return;
+	}
+
+	const closeMenu = () => {
+		menu.classList.remove("is-open");
+		menu.setAttribute("aria-hidden", "true");
+		menuButton.setAttribute("aria-expanded", "false");
+	};
+
+	menuButton.addEventListener("click", () => {
+		const isOpen = menu.classList.toggle("is-open");
+		menu.setAttribute("aria-hidden", String(!isOpen));
+		menuButton.setAttribute("aria-expanded", String(isOpen));
+	});
+
+	menu.querySelectorAll("[data-mobile-menu-close]").forEach((element) => {
+		element.addEventListener("click", closeMenu);
+	});
+
+	menuLinks.forEach((link) => {
+		link.addEventListener("click", (event) => {
+			event.preventDefault();
+			activateTab(link.dataset.tab);
+			closeMenu();
+			window.scrollTo({ top: 0, behavior: "auto" });
+		});
+	});
+
+	document.addEventListener("keydown", (event) => {
+		if (event.key === "Escape") {
+			closeMenu();
+		}
+	});
+
+	menu.dataset.ready = "true";
+};
+
 let currentLanguage = "pt";
 const translations = {
 	pt: {
@@ -184,7 +249,7 @@ const translations = {
 		nav: {
 			projects: "Projetos",
 			about: "Sobre",
-			resume: "Baixar currículo",
+			resume: "Currículo",
 		},
 		hero: {
 			iosDev: "iOS Developer",
@@ -240,7 +305,7 @@ const translations = {
 		nav: {
 			projects: "Projects",
 			about: "About",
-			resume: "Download resume",
+			resume: "Resume",
 		},
 		hero: {
 			iosDev: "iOS Developer",
