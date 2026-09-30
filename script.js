@@ -117,6 +117,153 @@ const setupProjectAppGrid = () => {
 	}
 };
 
+const setupSkillsTabs = () => {
+	const tabs = document.querySelectorAll(".skills-tab");
+	const pills = document.getElementById("skill-pills");
+	const select = document.getElementById("skills-select");
+	if (!tabs.length || !pills || pills.dataset.ready === "true") {
+		return;
+	}
+
+	const allSkills = [...pills.children].map((pill) => pill.textContent);
+	const tabsContainer = tabs[0].parentElement;
+	const skillsByCategory = {
+		all: allSkills,
+		design: [
+			"Mapping experiences",
+			"Insights into design solutions",
+			"Information architecture",
+			"Concepts across fidelity",
+			"Wireframing",
+			"Prototyping",
+			"Responsive design",
+			"Visual hierarchy",
+			"Design documentation",
+			"Design systems",
+			"Microinteractions",
+		],
+		research: [
+			"User interviews",
+			"Contextual Inquiries",
+			"Usability testing",
+			"Validation",
+			"Heuristic Evaluation",
+			"Accessibility audits",
+			"Affinity mapping",
+			"Qualitative analysis",
+			"Personas",
+			"Journey mapping",
+			"Competitive analysis",
+			"Survey Creation",
+		],
+		apple: [
+			"iOS",
+			"iPadOS",
+			"watchOS",
+			"visionOS",
+			"ARKit",
+			"RealityKit",
+			"Core Data",
+			"Core ML",
+			"HealthKit",
+			"SwiftUI",
+			"SwiftData",
+			"UIKit",
+			"SpriteKit",
+			"Xcode",
+			"SwiftLint",
+			"CBL",
+			"HIG",
+		],
+		technical: [
+			"REST APIs",
+			"Dev Handoff",
+			"Git / Github",
+			"HTML / CSS",
+			"Accessibility development (WCAG)",
+		],
+	};
+
+	const renderSkills = (category) => {
+		const nextPills = skillsByCategory[category].map((skill, index) => {
+			const pill = document.createElement("span");
+			pill.textContent = skill;
+			pill.style.setProperty("--skill-index", index);
+			return pill;
+		});
+
+		pills.classList.remove("is-refreshing");
+		pills.replaceChildren(...nextPills);
+		void pills.offsetWidth;
+		pills.classList.add("is-refreshing");
+	};
+
+	const updateSkillsIndicator = (tab) => {
+		if (!tab.offsetWidth) {
+			return false;
+		}
+
+		tabsContainer.style.setProperty("--skills-indicator-left", `${tab.offsetLeft}px`);
+		tabsContainer.style.setProperty("--skills-indicator-width", `${tab.offsetWidth}px`);
+		tabsContainer.dataset.indicatorReady = "true";
+		tabsContainer.classList.remove("is-initializing");
+		return true;
+	};
+
+	const selectCategory = (tab) => {
+		const category = tab.dataset.skillCategory || "all";
+		tabs.forEach((currentTab) => {
+			const isActive = currentTab === tab;
+			currentTab.classList.toggle("is-active", isActive);
+			currentTab.setAttribute("aria-selected", String(isActive));
+		});
+		if (select) {
+			select.value = category;
+		}
+		updateSkillsIndicator(tab);
+		renderSkills(category);
+	};
+
+	tabs.forEach((tab) => {
+		tab.addEventListener("click", () => {
+			selectCategory(tab);
+		});
+	});
+
+	select?.addEventListener("change", () => {
+		const selectedTab = [...tabs].find((tab) => tab.dataset.skillCategory === select.value);
+		if (selectedTab) {
+			selectCategory(selectedTab);
+		}
+	});
+
+	const initialTab = tabs[0];
+	delete tabsContainer.dataset.indicatorReady;
+	tabs.forEach((tab, index) => {
+		const isInitialTab = index === 0;
+		tab.classList.toggle("is-active", isInitialTab);
+		tab.setAttribute("aria-selected", String(isInitialTab));
+	});
+	if (select) {
+		select.value = initialTab.dataset.skillCategory || "all";
+	}
+	renderSkills(initialTab.dataset.skillCategory || "all");
+	const measureInitialIndicator = () => {
+		if (!updateSkillsIndicator(initialTab)) {
+			requestAnimationFrame(measureInitialIndicator);
+		}
+	};
+	requestAnimationFrame(measureInitialIndicator);
+	window.addEventListener("resize", () => {
+		const activeTab = [...tabs].find((tab) => tab.getAttribute("aria-selected") === "true");
+		if (activeTab) {
+			updateSkillsIndicator(activeTab);
+		}
+	});
+
+	pills.dataset.ready = "true";
+};
+
 const reinitializePageScripts = () => {
 	const projectsGrid = document.querySelector(".home-page .projects-grid");
 	if (projectsGrid && !projectsGrid.dataset.carouselReady) {
@@ -130,6 +277,7 @@ const reinitializePageScripts = () => {
 	}
 
 	setupProjectAppGrid();
+	setupSkillsTabs();
 
 	// Re-attach event listeners
 	setupTabNavigation();
@@ -271,7 +419,7 @@ const translations = {
 		nav: {
 			projects: "Projetos",
 			about: "Sobre",
-			resume: "Currículo",
+			resume: "Baixar Currículo",
 		},
 		hero: {
 			iosDev: "iOS Developer",
@@ -285,6 +433,24 @@ const translations = {
 			title: "Experiência",
 			faifce: "Product Designer responsável pela estruturação e evolução de soluções digitais para o monitoramento de recursos do Ministério da Educação (MEC). Foco em design de sistemas complexos, usabilidade e transparência na gestão pública.",
 			apple: "Product Designer com 11 projetos multiplataforma (iOS, iPadOS, visionOS). Domínio de todo o ciclo de design: pesquisa, ideação, prototipação no Figma, testes de usabilidade e acompanhamento pós-lançamento.",
+		},
+		about: {
+			greeting: "Olá",
+			engineeringBadge: "Engenharia",
+			summary: "Graduanda em Engenharia de Telecomunicações, UI/UX Designer e Desenvolvedora iOS com experiência no Apple Developer Academy. Atuo na criação de produtos digitais, aplicando design centrado no usuário, pensamento estratégico e colaboração com times de tecnologia para transformar necessidades reais em experiências intuitivas e eficientes.",
+			professionalExperience: "Experiência Profissional",
+			websiteDesignDescription: "Product Designer responsável pela estruturação e evolução de soluções digitais para o monitoramento de recursos do Ministério da Educação (MEC). Foco em design de sistemas complexos, usabilidade e transparência na gestão pública.",
+			mobileAppDescription: "Com experiência em 11 projetos multiplataforma (iOS, iPadOS, visionOS), atuei em todo o ciclo de design — desde pesquisa e ideação até prototipação no Figma, validação com usuários e acompanhamento pós-lançamento.",
+			creativeDevelopmentDescription: "Atuação no desenvolvimento full-cycle de produtos para o ecossistema Apple, participando de projetos para iOS, iPadOS, visionOS, watchOS e tvOS. Experiência em todo o ciclo de vida do produto, desde a ideação até o design final e implementação.",
+			education: "Educação",
+			certificates: "Certificados",
+			telecommunicationsDegree: "Bacharelado em Engenharia de Telecomunicações",
+			instituteName: "Instituto Federal de Educação, Ciência e Tecnologia do Ceará",
+			mandarin: "Mandarim",
+			skills: "Habilidades",
+			tools: "Ferramentas",
+			allSkills: "Tudo",
+			skillsCategories: "Categorias de habilidades",
 		},
 		contact: {
 			title: "Entre em contato comigo",
@@ -327,7 +493,7 @@ const translations = {
 		nav: {
 			projects: "Projects",
 			about: "About",
-			resume: "Resume",
+			resume: "Download Resume",
 		},
 		hero: {
 			iosDev: "iOS Developer",
@@ -341,6 +507,24 @@ const translations = {
 			title: "Experience",
 			faifce: "Product Designer responsible for structuring and evolving digital solutions for monitoring Ministry of Education (MEC) resources. Focus on complex systems design, usability and transparency in public management.",
 			apple: "Product Designer with 11 multiplatform projects (iOS, iPadOS, visionOS). Mastery of the entire design cycle: research, ideation, prototyping in Figma, user validation and post-launch follow-up.",
+		},
+		about: {
+			greeting: "Hello",
+			engineeringBadge: "Engineering",
+			summary: "Telecommunications Engineering undergraduate, UI/UX Designer and iOS Developer with experience at the Apple Developer Academy. I create digital products using user-centered design, strategic thinking and collaboration with technology teams to turn real needs into intuitive and efficient experiences.",
+			professionalExperience: "Professional Experience",
+			websiteDesignDescription: "Product Designer responsible for structuring and evolving digital solutions for monitoring Ministry of Education (MEC) resources. Focused on complex systems design, usability and transparency in public management.",
+			mobileAppDescription: "With experience in 11 multiplatform projects (iOS, iPadOS, visionOS), I worked across the entire design cycle, from research and ideation to prototyping in Figma, user validation and post-launch follow-up.",
+			creativeDevelopmentDescription: "Full-cycle development of products for the Apple ecosystem, contributing to projects for iOS, iPadOS, visionOS, watchOS and tvOS. Experience across the entire product lifecycle, from ideation to final design and implementation.",
+			education: "Education",
+			certificates: "Certificates",
+			telecommunicationsDegree: "Bachelor's degree in Telecommunications Engineering",
+			instituteName: "Federal Institute of Education, Science and Technology of Ceará",
+			mandarin: "Mandarin",
+			skills: "Skills",
+			tools: "Tools",
+			allSkills: "All",
+			skillsCategories: "Skill categories",
 		},
 		contact: {
 			title: "Get in touch",

@@ -77,12 +77,12 @@
 }
 
 .resume-button {
-    font-family: "Roboto", sans-serif;
+    font-family: "Helvetica Neue Medium Extended", sans-serif;
     font-weight: 400;
-    font-size: clamp(10px, 3vw, 14px);
+    font-size: clamp(8px, 2vw, 12px);
     background: var(--purple);
     color: white;
-    padding: 8px 20px;
+    padding: 8px 12px;
     border-radius: 6px;
     transition: transform 0.2s ease;
 }
