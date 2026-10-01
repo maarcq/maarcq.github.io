@@ -431,7 +431,7 @@ function setupBackButtons() {
 	});
 }
 
-let currentLanguage = "pt";
+let currentLanguage = document.documentElement.lang === "en" ? "en" : "pt";
 const translations = {
 	pt: {
 		language: {
