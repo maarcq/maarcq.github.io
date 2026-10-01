@@ -9,7 +9,7 @@ const loadPages = async () => {
 
 	try {
 		// Load home page
-		const homeResponse = await fetch("pages/home.html");
+		const homeResponse = await fetch("pages/home.html?v=home-i18n");
 		const homeHTML = await homeResponse.text();
 
 		// Load projects page
@@ -424,6 +424,16 @@ const translations = {
 		hero: {
 			iosDev: "iOS Developer",
 		},
+		home: {
+			altrooImageAlt: "Projeto Altroo",
+			monitorImageAlt: "Projeto Monitor Pronatec",
+			cauldronImageAlt: "Projeto Into the Cauldron",
+			wantyImageAlt: "Projeto Wanty",
+			sonhariumImageAlt: "Projeto Sonharium",
+			sandboxImageAlt: "Projeto Sandbox",
+			sattyImageAlt: "Projeto Satty",
+			hankaImageAlt: "Projeto Hanka",
+		},
 		projects: {
 			title: "Projetos em destaque",
 			subtitle: "UX/UI Designer | Product Designer | Developer",
@@ -431,6 +441,7 @@ const translations = {
 		},
 		experience: {
 			title: "Experiência",
+			faifceOrganization: "Fundação de Apoio ao Ensino, a Pesquisa e a Extensão do IFCE – FAIFCE",
 			faifce: "Product Designer responsável pela estruturação e evolução de soluções digitais para o monitoramento de recursos do Ministério da Educação (MEC). Foco em design de sistemas complexos, usabilidade e transparência na gestão pública.",
 			apple: "Product Designer com 11 projetos multiplataforma (iOS, iPadOS, visionOS). Domínio de todo o ciclo de design: pesquisa, ideação, prototipação no Figma, testes de usabilidade e acompanhamento pós-lançamento.",
 		},
@@ -498,6 +509,16 @@ const translations = {
 		hero: {
 			iosDev: "iOS Developer",
 		},
+		home: {
+			altrooImageAlt: "Altroo project",
+			monitorImageAlt: "Monitor Pronatec project",
+			cauldronImageAlt: "Into the Cauldron project",
+			wantyImageAlt: "Wanty project",
+			sonhariumImageAlt: "Sonharium project",
+			sandboxImageAlt: "Sandbox project",
+			sattyImageAlt: "Satty project",
+			hankaImageAlt: "Hanka project",
+		},
 		projects: {
 			title: "Featured projects",
 			subtitle: "UX/UI Designer | Product Designer | Developer",
@@ -505,6 +526,7 @@ const translations = {
 		},
 		experience: {
 			title: "Experience",
+			faifceOrganization: "Foundation for Teaching, Research and Extension Support of IFCE – FAIFCE",
 			faifce: "Product Designer responsible for structuring and evolving digital solutions for monitoring Ministry of Education (MEC) resources. Focus on complex systems design, usability and transparency in public management.",
 			apple: "Product Designer with 11 multiplatform projects (iOS, iPadOS, visionOS). Mastery of the entire design cycle: research, ideation, prototyping in Figma, user validation and post-launch follow-up.",
 		},
@@ -566,6 +588,9 @@ const tagTranslations = {
 	Ilustração: "Illustration",
 	"Design Gráfico": "Graphic Design",
 	Acessibilidade: "Accessibility",
+	"Recursos Públicos": "Public Resources",
+	Mandarim: "Mandarin",
+	Protótipo: "Prototype",
 };
 
 const applyLanguage = (language, shouldAnimate = false) => {
@@ -602,6 +627,17 @@ const applyLanguage = (language, shouldAnimate = false) => {
 		});
 
 		element.setAttribute("aria-label", value);
+	});
+
+	document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+		const keys = element.dataset.i18nAlt.split(".");
+		let value = selectedTranslations;
+
+		keys.forEach((key) => {
+			value = value[key];
+		});
+
+		element.setAttribute("alt", value);
 	});
 
 	document.querySelectorAll(".project-button").forEach((button) => {
