@@ -82,9 +82,12 @@ const setupProjectAppGrid = () => {
 	}
 
 	const appItems = grid.querySelectorAll(".project-app-item");
+	const getDescriptionForItem = (item) => currentLanguage === "en"
+		? (item.dataset.projectTextEn || "Project in development.")
+		: (item.dataset.projectText || "Projeto em desenvolvimento.");
+
 	appItems.forEach((item) => {
 		const appName = item.getAttribute("aria-label") || item.querySelector(".project-app-name")?.textContent || "Projeto";
-		const description = item.dataset.projectText || "Projeto em desenvolvimento.";
 		const projectUrl = item.dataset.projectUrl;
 
 		item.addEventListener("click", (event) => {
@@ -98,7 +101,7 @@ const setupProjectAppGrid = () => {
 		});
 
 		item.addEventListener("mouseenter", () => {
-			updateProjectCopy(appName, description);
+			updateProjectCopy(appName, getDescriptionForItem(item));
 		});
 	});
 
@@ -117,9 +120,8 @@ const setupProjectAppGrid = () => {
 			}
 
 			const appName = activeItem.getAttribute("aria-label") || activeItem.querySelector(".project-app-name")?.textContent || "Projeto";
-			const description = activeItem.dataset.projectText || "Projeto em desenvolvimento.";
 			activeItem.classList.add("is-autoplaying");
-			updateProjectCopy(appName, description);
+			updateProjectCopy(appName, getDescriptionForItem(activeItem));
 			activeIndex = (activeIndex + 1) % appItems.length;
 		};
 
@@ -450,6 +452,13 @@ const translations = {
 			title: "Projetos em destaque",
 			subtitle: "UX/UI Designer | Product Designer | Developer",
 			view: "Ver projeto",
+			heroTitle: "Explore meus<br>projetos",
+			heroDescriptionFirst: "Aqui você encontra uma seleção dos projetos que fizeram parte da minha trajetória em design e desenvolvimento de produtos digitais.",
+			heroDescriptionSecond: "Cada projeto nasceu de um desafio diferente e foi uma oportunidade para transformar ideias em experiências mais simples, intuitivas e significativas.",
+			heroHoverText: "Clique em um App para<br>descobrir mais.",
+			exploreProjects: "Explorar projetos",
+			appsList: "Lista de apps",
+			phoneImageAlt: "iPhone com papel de parede colorido",
 		},
 		experience: {
 			title: "Experiência",
@@ -535,6 +544,13 @@ const translations = {
 			title: "Featured projects",
 			subtitle: "UX/UI Designer | Product Designer | Developer",
 			view: "View project",
+			heroTitle: "Explore my<br>projects",
+			heroDescriptionFirst: "Here you will find a selection of projects that shaped my journey in design and digital product development.",
+			heroDescriptionSecond: "Each project began with a different challenge and was an opportunity to turn ideas into simpler, more intuitive and meaningful experiences.",
+			heroHoverText: "Click an App to<br>discover more.",
+			exploreProjects: "Explore projects",
+			appsList: "List of apps",
+			phoneImageAlt: "iPhone with colorful wallpaper",
 		},
 		experience: {
 			title: "Experience",
