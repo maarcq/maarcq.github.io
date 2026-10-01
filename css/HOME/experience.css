@@ -1,0 +1,75 @@
+.experience-section {
+  margin: 0 24px 24px;
+  padding-top: clamp(24px, 5vw, 40px);
+  padding-right: clamp(24px, 5vw, 40px);
+  padding-left: clamp(24px, 5vw, 40px);
+  padding-bottom: clamp(24px, 5vw, 40px);
+  background: var(--surface);
+  border-radius: var(--radius);
+  text-align: left;
+}
+
+.experience-section h2 {
+  font-family: "Helvetica Neue Medium Extended", sans-serif;
+  font-size: clamp(18px, 5vw, 30px);
+  font-weight: 200;
+  color: var(--text);
+  margin-bottom: clamp(24px, 5vw, 40px);
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.experience-card {
+  height: 100%;
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  border: 0.6px var(--purple) solid;
+}
+
+.experience-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.experience-card h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: clamp(14px, 2vw, 18px);
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.experience-card h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: clamp(10px, 2vw, 14px);
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.year {
+  background: var(--purple);
+  color: #ffffff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-family: "Helvetica Neue Medium Extended", sans-serif;
+  font-weight: 30;
+  font-size: clamp(8px, 2vw, 11px);
+  white-space: nowrap;
+}
+
+.experience-card p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  font-size: clamp(10px, 2vw, 13px);
+  color: var(--text-secondary);
+}

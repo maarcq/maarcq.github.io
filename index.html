@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marcelle Queiroz — UX/UI Designer & iOS Dev</title>
+
+    <link rel="stylesheet" href="style.css?v=mobile-nav">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header">
+
+        <div class="language-switch">
+             <button class="language active" data-language="pt">Português 🇧🇷</button>
+             <button class="language" data-language="en">Inglês 🇺🇸</button>
+        </div>
+
+        <nav class="navigation" aria-label="Navegação principal">
+            <a href="#home" class="nav-link active" data-tab="home">
+                Home
+            </a>
+            <a href="#projetos" class="nav-link" data-tab="projetos">
+                <span data-i18n="nav.projects">Projetos</span>
+            </a>
+            <a href="#sobre" class="nav-link" data-tab="sobre">
+                <span data-i18n="nav.about">Sobre</span>
+            </a>
+
+            <span class="nav-indicator"></span>
+        </nav>
+
+        <button class="mobile-menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+            <img src="assets/icons/menuIcon.png" alt="">
+        </button>
+
+        <a href="https://drive.google.com/file/d/1ymZTCj2Wif2KRJyCuMDPyI4HyOn9q-Ag/view?usp=sharing" class="resume-button">
+            <span data-i18n="nav.resume">Baixar Currículo</span>
+        </a>
+
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-backdrop" data-mobile-menu-close></div>
+        <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+            <div class="mobile-menu-header">
+                <h2 id="mobile-menu-title">Menu</h2>
+                <button class="mobile-menu-close" type="button" aria-label="Fechar menu" data-mobile-menu-close>&times;</button>
+            </div>
+            <nav class="mobile-navigation" aria-label="Navegação mobile">
+                <a href="#home" class="mobile-nav-link" data-tab="home">Home</a>
+                <a href="#projetos" class="mobile-nav-link" data-tab="projetos">Projetos</a>
+                <a href="#sobre" class="mobile-nav-link" data-tab="sobre">Sobre</a>
+            </nav>
+        </div>
+    </div>
+
+    <main id="page-content">
+        <!-- Home page content loads here -->
+    </main>
+
+     <!-- CONTACT SECTION -->
+    <section id="contato" class="contact-section">
+        <h2 data-i18n="contact.title">Entre em contato comigo</h2>
+        <div class="contact-grid">
+            <a href="tel:+5585999590533" class="contact-card">
+                <h3 data-i18n="contact.phone">Celular</h3>
+                <p>+55 (85) 99959-0533</p>
+            </a>
+
+            <a href="mailto:contato.marcellequeiroz@gmail.com" class="contact-card">
+                <h3 data-i18n="contact.email">Email</h3>
+                <p>contato.marcellequeiroz@gmail.com</p>
+            </a>
+
+            <a href="https://www.linkedin.com/in/marcellerq/" class="contact-card" target="_blank" rel="noopener noreferrer">
+                <h3>LinkedIn</h3>
+                <p>linkedin.com/in/marcelleq</p>
+            </a>
+
+            <a href="https://github.com/maarcq" class="contact-card" target="_blank" rel="noopener noreferrer">
+                <h3>GitHub</h3>
+                <p>github.com/maarcq</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <strong>Marcelle Queiroz</strong>
+
+        <span data-i18n="footer.rights">
+            © 2026 Marcelle Queiroz. Todos os direitos reservados.
+        </span>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
