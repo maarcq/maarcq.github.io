@@ -268,6 +268,14 @@ const setupSkillsTabs = () => {
 		}
 	};
 	requestAnimationFrame(measureInitialIndicator);
+
+	window.refreshSkillsIndicator = () => {
+		const activeTab = [...tabs].find((tab) => tab.getAttribute("aria-selected") === "true") || initialTab;
+		requestAnimationFrame(() => {
+			updateSkillsIndicator(activeTab);
+			requestAnimationFrame(() => updateSkillsIndicator(activeTab));
+		});
+	};
 	window.addEventListener("resize", () => {
 		const activeTab = [...tabs].find((tab) => tab.getAttribute("aria-selected") === "true");
 		if (activeTab) {
@@ -692,6 +700,11 @@ const applyLanguage = (language, shouldAnimate = false) => {
 		button.classList.toggle("active", isActive);
 		button.setAttribute("aria-pressed", isActive);
 	});
+
+	window.refreshSkillsIndicator?.();
+	if (document.fonts?.ready) {
+		document.fonts.ready.then(() => window.refreshSkillsIndicator?.());
+	}
 
 	const languageSwitch = document.querySelector(".language-switch");
 	if (shouldAnimate && languageChanged && languageSwitch) {
