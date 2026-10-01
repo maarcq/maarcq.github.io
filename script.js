@@ -59,6 +59,7 @@ const setupProjectAppGrid = () => {
 
 	const updateProjectCopy = (title, text, useHtml = false) => {
 		if (hoverCopy) {
+			hoverCopy.classList.toggle("is-app-hovering", !useHtml);
 			hoverCopy.classList.remove("is-changing");
 			void hoverCopy.offsetWidth;
 			hoverCopy.classList.add("is-changing");
@@ -84,6 +85,17 @@ const setupProjectAppGrid = () => {
 	appItems.forEach((item) => {
 		const appName = item.getAttribute("aria-label") || item.querySelector(".project-app-name")?.textContent || "Projeto";
 		const description = item.dataset.projectText || "Projeto em desenvolvimento.";
+		const projectUrl = item.dataset.projectUrl;
+
+		item.addEventListener("click", (event) => {
+			if (!projectUrl) {
+				return;
+			}
+
+			event.preventDefault();
+			event.stopPropagation();
+			window.location.href = projectUrl;
+		});
 
 		item.addEventListener("mouseenter", () => {
 			updateProjectCopy(appName, description);
