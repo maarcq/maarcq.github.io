@@ -524,6 +524,132 @@
 }
 
 /* ============================================
+   02.2 IDEATION
+   ============================================ */
+.project-detail-section[data-project="Altroo"] .project-ideation {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: clamp(24px, 3vw, 40px);
+	margin: 0 clamp(24px, 5vw, 80px) clamp(48px, 6vw, 96px);
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-intro {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-intro h2 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(20px, 2vw, 32px);
+	font-weight: 400;
+	line-height: 1.15;
+	letter-spacing: -0.3px;
+	color: var(--altrooTeal);
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-intro p {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	line-height: 1.45;
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-intro p:first-of-type {
+	font-size: clamp(18px, 2vw, 28px);
+	font-weight: 500;
+	color: var(--altrooBlue);
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-intro p:last-of-type {
+	max-width: 88%;
+	font-size: clamp(14px, 2vw, 20px);
+	font-weight: 300;
+	color: var(--text);
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-caption,
+.project-detail-section[data-project="Altroo"] .ideation-wireframes-gallery figcaption {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(12px, 1.3vw, 16px);
+	font-weight: 300;
+	line-height: 1.45;
+	color: var(--text);
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-flow {
+	width: 100%;
+	margin: 0;
+	overflow: hidden;
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-flow img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-wireframes {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-wireframes h3 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(18px, 2vw, 28px);
+	font-weight: 500;
+	line-height: 1.45;
+	color: var(--altrooBlue);
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-wireframes-content {
+	display: grid;
+	grid-template-columns: minmax(180px, 0.34fr) minmax(0, 1fr);
+	gap: clamp(24px, 4vw, 64px);
+	align-items: start;
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-wireframes-content > p {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(14px, 2vw, 20px);
+	font-weight: 300;
+	line-height: 1.45;
+	color: var(--text);
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-wireframes-gallery {
+	min-width: 0;
+	margin: 0;
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-wireframes-grid {
+	display: block;
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-wireframes-grid > div {
+	overflow: hidden;
+	border-radius: 12px;
+	background: #fff;
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-wireframes-grid img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+.project-detail-section[data-project="Altroo"] .ideation-wireframes-gallery figcaption {
+	margin-top: 8px;
+}
+
+/* ============================================
    03 BRANDING
    ============================================ */
 .project-detail-section[data-project="Altroo"] .project-branding {
@@ -878,6 +1004,15 @@
 		width: min(100%, 360px);
 	}
 
+	.project-detail-section[data-project="Altroo"] .project-ideation {
+		margin: 0 24px 96px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .ideation-wireframes-content {
+		grid-template-columns: minmax(160px, 0.4fr) minmax(0, 1fr);
+		gap: 28px;
+	}
+
 	.project-detail-section[data-project="Altroo"] .project-meta {
 		grid-template-columns: 1fr;
 		gap: 24px;
@@ -996,6 +1131,25 @@
 
 	.project-detail-section[data-project="Altroo"] .project-investigation {
 		margin: 0 16px 80px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .project-ideation {
+		margin: 0 16px 80px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .ideation-intro p:last-of-type {
+		max-width: none;
+	}
+
+	.project-detail-section[data-project="Altroo"] .ideation-wireframes-content {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .ideation-wireframes-content > p,
+	.project-detail-section[data-project="Altroo"] .ideation-wireframes-gallery {
+		width: 100%;
 	}
 
 	.project-detail-section[data-project="Altroo"] .investigation-row {
