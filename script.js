@@ -523,6 +523,11 @@ const translations = {
 			caseLabel: "Conheça o Altroo UX Case",
 			projectCategories: "Categorias do projeto",
 			workflowSteps: "Etapas do workflow",
+			projectInformation: "Informações do projeto",
+			role: "Atuação",
+			duration: "Duração",
+			durationValue: "5 meses",
+			caseDate: "Dezembro 2025",
 		},
 	},
 	en: {
@@ -615,6 +620,11 @@ const translations = {
 			caseLabel: "Explore the Altroo UX Case",
 			projectCategories: "Project categories",
 			workflowSteps: "Workflow steps",
+			projectInformation: "Project information",
+			role: "Role",
+			duration: "Duration",
+			durationValue: "5 months",
+			caseDate: "December 2025",
 		},
 	},
 };
