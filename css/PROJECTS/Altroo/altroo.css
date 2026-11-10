@@ -337,6 +337,193 @@
 }
 
 /* ============================================
+   02.1 INVESTIGATION
+   ============================================ */
+.project-detail-section[data-project="Altroo"] .project-investigation {
+	position: relative;
+	margin: 0 clamp(24px, 5vw, 80px) clamp(48px, 6vw, 96px);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-intro {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin: 0 0 clamp(24px, 3vw, 40px);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-intro h2 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(20px, 2vw, 32px);
+	font-weight: 400;
+	line-height: 1.15;
+	letter-spacing: -0.3px;
+	color: var(--altrooTeal);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-intro p {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(18px, 2vw, 28px);
+	font-weight: 500;
+	line-height: 1;
+	color: var(--altrooBlue);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-rows {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(24px, 3vw, 40px);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-row {
+	display: grid;
+	grid-template-columns: minmax(0, 0.84fr) minmax(0, 0.91fr) minmax(0, 1fr);
+	gap: clamp(20px, 2vw, 36px);
+	align-items: start;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-copy,
+.project-detail-section[data-project="Altroo"] .investigation-direction,
+.project-detail-section[data-project="Altroo"] .investigation-reference {
+	min-width: 0;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-copy {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-pill {
+	align-self: flex-start;
+	padding: 8px 16px;
+	border: 1px solid var(--altrooTeal);
+	border-radius: 999px;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(14px, 1.2vw, 18px);
+	font-weight: 400;
+	line-height: 1;
+	color: var(--altrooBlue);
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-copy p,
+.project-detail-section[data-project="Altroo"] .investigation-direction p,
+.project-detail-section[data-project="Altroo"] .investigation-reference figcaption {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	line-height: 1.45;
+	color: var(--text);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-copy p,
+.project-detail-section[data-project="Altroo"] .investigation-direction p {
+	font-size: clamp(14px, 2vw, 20px);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-insight {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: clamp(20px, 2.2vw, 32px);
+	border-radius: 24px;
+	background: #e8faf7;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-insight h3 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(18px, 2vw, 24px);
+	font-weight: 500;
+	line-height: 1.2;
+	color: #0a6661;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-insight p {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(14px, 1.9vw, 20px);
+	font-weight: 300;
+	line-height: 1.45;
+	color: var(--text);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-direction {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-direction h3 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(18px, 1.9vw, 24px);
+	font-weight: 500;
+	line-height: 1.45;
+	color: var(--altrooBlue);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-reference {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin: 0;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-reference figcaption {
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(12px, 1.3vw, 16px);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-app-images {
+	display: flex;
+	align-items: flex-start;
+	overflow: hidden;
+	align-self: stretch;
+	flex: 1 1 100%;
+	min-width: 0;
+	width: 100%;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-app-image {
+	position: relative;
+	flex: 0 0 50%;
+	width: 50%;
+	overflow: hidden;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-app-image-primary {
+	height: clamp(150px, 18vw, 260px);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-app-image-secondary {
+	height: clamp(110px, 15vw, 224px);
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-app-images img {
+	display: block;
+	width: 100%;
+	max-width: none;
+	height: 100%;
+	object-fit: cover;
+	object-position: left center;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-app-image-secondary img {
+	object-position: right center;
+}
+
+.project-detail-section[data-project="Altroo"] .investigation-reference-miro img {
+	display: block;
+	width: min(100%, 420px);
+	height: auto;
+	object-fit: contain;
+}
+
+/* ============================================
    03 BRANDING
    ============================================ */
 .project-detail-section[data-project="Altroo"] .project-branding {
@@ -665,6 +852,32 @@
 		height: auto;
 	}
 
+	.project-detail-section[data-project="Altroo"] .project-investigation {
+		margin: 0 24px 96px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .investigation-row {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 28px 20px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .investigation-copy {
+		grid-column: 1;
+	}
+
+	.project-detail-section[data-project="Altroo"] .investigation-insight {
+		grid-column: 2;
+	}
+
+	.project-detail-section[data-project="Altroo"] .investigation-direction,
+	.project-detail-section[data-project="Altroo"] .investigation-reference {
+		grid-column: 1 / -1;
+	}
+
+	.project-detail-section[data-project="Altroo"] .investigation-reference-miro img {
+		width: min(100%, 360px);
+	}
+
 	.project-detail-section[data-project="Altroo"] .project-meta {
 		grid-template-columns: 1fr;
 		gap: 24px;
@@ -779,6 +992,35 @@
 
 	.project-detail-section[data-project="Altroo"] .workflow-process {
 		grid-template-columns: 1fr;
+	}
+
+	.project-detail-section[data-project="Altroo"] .project-investigation {
+		margin: 0 16px 80px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .investigation-row {
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .investigation-copy,
+	.project-detail-section[data-project="Altroo"] .investigation-insight,
+	.project-detail-section[data-project="Altroo"] .investigation-direction,
+	.project-detail-section[data-project="Altroo"] .investigation-reference {
+		width: 100%;
+	}
+
+	.project-detail-section[data-project="Altroo"] .investigation-app-images img {
+		height: 100%;
+	}
+
+	.project-detail-section[data-project="Altroo"] .investigation-app-image-primary {
+		height: clamp(140px, 42vw, 220px);
+	}
+
+	.project-detail-section[data-project="Altroo"] .investigation-app-image-secondary {
+		height: clamp(100px, 34vw, 180px);
 	}
 
 	.project-detail-section[data-project="Altroo"] .app-image-main {
