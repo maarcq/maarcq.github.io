@@ -938,6 +938,62 @@
 	object-fit: cover;
 }
 
+.project-detail-section[data-project="Altroo"] .branding-style-guide {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(16px, 2vw, 32px);
+	margin-top: clamp(48px, 6vw, 96px);
+}
+
+.project-detail-section[data-project="Altroo"] .branding-style-guide h3 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(20px, 2vw, 32px);
+	font-weight: 400;
+	line-height: 1.15;
+	letter-spacing: -0.3px;
+	color: var(--altrooTeal);
+}
+
+.project-detail-section[data-project="Altroo"] .branding-style-guide > p {
+	max-width: 100%;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(14px, 2vw, 20px);
+	font-weight: 300;
+	line-height: 1.45;
+	color: var(--text);
+}
+
+.project-detail-section[data-project="Altroo"] .style-guide-evidence {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: clamp(20px, 4vw, 48px);
+}
+
+.project-detail-section[data-project="Altroo"] .style-guide-evidence-item {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	min-width: 0;
+	margin: 0;
+}
+
+.project-detail-section[data-project="Altroo"] .style-guide-evidence-item img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+.project-detail-section[data-project="Altroo"] .style-guide-evidence-item figcaption {
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(14px, 1.5vw, 20px);
+	font-weight: 500;
+	line-height: 1.45;
+	color: var(--text);
+}
+
 /* ============================================
    04 APP
    ============================================ */
@@ -1170,6 +1226,10 @@
 	}
 
 	.project-detail-section[data-project="Altroo"] .branding-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.project-detail-section[data-project="Altroo"] .style-guide-evidence {
 		grid-template-columns: 1fr;
 	}
 

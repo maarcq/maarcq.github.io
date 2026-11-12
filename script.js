@@ -577,6 +577,10 @@ const translations = {
 			validationOpportunity: "Oportunidade de melhoria",
 			validationLowestScore: "Menor pontuação média",
 			validationOpportunityDescription: "“Eu acho que precisaria de ajuda de uma pessoa com conhecimentos técnicos para usar o sistema.”",
+			styleGuideTitle: "Style Guide e Design System",
+			styleGuideDescription: "Padronizei componentes críticos e estilos visuais para reduzir variações na implementação e facilitar a comunicação com o time técnico.",
+			colorVariables: "Variáveis de cor no Style Guide",
+			designSystemComponents: "Componentes do Design System",
 		},
 	},
 	en: {
@@ -723,6 +727,10 @@ const translations = {
 			validationOpportunity: "Opportunity for improvement",
 			validationLowestScore: "Lowest average score",
 			validationOpportunityDescription: "“I think I would need help from someone with technical knowledge to use the system.”",
+			styleGuideTitle: "Style Guide and Design System",
+			styleGuideDescription: "I standardized critical components and visual styles to reduce implementation variations and facilitate communication with the technical team.",
+			colorVariables: "Color variables in the Style Guide",
+			designSystemComponents: "Design System components",
 		},
 	},
 };
