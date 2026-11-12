@@ -767,6 +767,133 @@
 }
 
 /* ============================================
+   02.4 VALIDATION
+   ============================================ */
+.project-detail-section[data-project="Altroo"] .project-validation {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(24px, 3vw, 40px);
+	margin: 0 clamp(24px, 5vw, 80px) clamp(48px, 6vw, 96px);
+}
+
+.project-detail-section[data-project="Altroo"] .validation-intro {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.project-detail-section[data-project="Altroo"] .validation-intro h2 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(20px, 2vw, 32px);
+	font-weight: 400;
+	line-height: 1.15;
+	letter-spacing: -0.3px;
+	color: var(--altrooTeal);
+}
+
+.project-detail-section[data-project="Altroo"] .validation-intro p,
+.project-detail-section[data-project="Altroo"] .validation-results > p {
+	max-width: 100%;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(14px, 2vw, 20px);
+	font-weight: 300;
+	line-height: 1.45;
+	color: var(--text);
+}
+
+.project-detail-section[data-project="Altroo"] .validation-scenarios,
+.project-detail-section[data-project="Altroo"] .validation-metrics {
+	display: grid;
+	gap: clamp(20px, 4vw, 48px);
+}
+
+.project-detail-section[data-project="Altroo"] .validation-scenarios {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-detail-section[data-project="Altroo"] .validation-scenario {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	min-width: 0;
+	padding: clamp(24px, 2.2vw, 40px);
+	border-radius: 24px;
+	background: #e8faf7;
+}
+
+.project-detail-section[data-project="Altroo"] .validation-scenario h3,
+.project-detail-section[data-project="Altroo"] .validation-metric h3 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(16px, 2vw, 24px);
+	font-weight: 500;
+	line-height: 1.2;
+	color: #0a6661;
+}
+
+.project-detail-section[data-project="Altroo"] .validation-scenario p,
+.project-detail-section[data-project="Altroo"] .validation-metric p {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(16px, 2vw, 22px);
+	font-weight: 300;
+	line-height: 1.45;
+	color: var(--text);
+}
+
+.project-detail-section[data-project="Altroo"] .validation-results {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.project-detail-section[data-project="Altroo"] .validation-results > h3 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(20px, 2vw, 32px);
+	font-weight: 500;
+	line-height: 1.2;
+	color: var(--altrooBlue);
+}
+
+.project-detail-section[data-project="Altroo"] .validation-metrics {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-detail-section[data-project="Altroo"] .validation-metric {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	min-width: 0;
+	padding: clamp(24px, 2.2vw, 40px);
+	border-radius: 24px;
+	background: var(--altrooBlueLight);
+}
+
+.project-detail-section[data-project="Altroo"] .validation-metric h3 {
+	color: var(--altrooBlue);
+}
+
+.project-detail-section[data-project="Altroo"] .validation-metric strong {
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(48px, 5vw, 72px);
+	font-weight: 700;
+	line-height: 1;
+	color: var(--altrooBlue);
+}
+
+.project-detail-section[data-project="Altroo"] .validation-metric h4 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(16px, 2vw, 24px);
+	font-weight: 500;
+	line-height: 1.2;
+	color: var(--text);
+}
+
+/* ============================================
    03 BRANDING
    ============================================ */
 .project-detail-section[data-project="Altroo"] .project-branding {
@@ -1143,6 +1270,14 @@
 		gap: 20px;
 	}
 
+	.project-detail-section[data-project="Altroo"] .project-validation {
+		margin: 0 24px 96px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .validation-metrics {
+		grid-template-columns: 1fr;
+	}
+
 	.project-detail-section[data-project="Altroo"] .project-meta {
 		grid-template-columns: 1fr;
 		gap: 24px;
@@ -1293,6 +1428,14 @@
 	.project-detail-section[data-project="Altroo"] .interfaces-versions {
 		grid-template-columns: 1fr;
 		gap: 32px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .project-validation {
+		margin: 0 16px 80px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .validation-scenarios {
+		grid-template-columns: 1fr;
 	}
 
 	.project-detail-section[data-project="Altroo"] .investigation-row {
