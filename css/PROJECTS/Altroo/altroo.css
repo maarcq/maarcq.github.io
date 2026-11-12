@@ -995,6 +995,94 @@
 }
 
 /* ============================================
+   05 LEARNINGS
+   ============================================ */
+.project-detail-section[data-project="Altroo"] .project-learnings {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(40px, 6vw, 96px);
+	margin: 0 clamp(24px, 5vw, 80px) clamp(48px, 6vw, 96px);
+}
+
+.project-detail-section[data-project="Altroo"] .learnings-heading,
+.project-detail-section[data-project="Altroo"] .learnings-content {
+	display: grid;
+	grid-template-columns: clamp(140px, 14vw, 200px) minmax(0, 1fr);
+}
+
+.project-detail-section[data-project="Altroo"] .learnings-heading {
+	align-items: baseline;
+}
+
+.project-detail-section[data-project="Altroo"] .learnings-number,
+.project-detail-section[data-project="Altroo"] .learnings-heading h2 {
+	font-family: "Helvetica Neue Medium Extended", sans-serif;
+	font-size: clamp(24px, 3vw, 36px);
+	font-weight: 500;
+	line-height: 1;
+	color: var(--altrooBlue);
+}
+
+.project-detail-section[data-project="Altroo"] .learnings-content {
+	gap: clamp(24px, 3vw, 40px);
+}
+
+.project-detail-section[data-project="Altroo"] .learnings-intro,
+.project-detail-section[data-project="Altroo"] .learnings-cards {
+	grid-column: 2;
+}
+
+.project-detail-section[data-project="Altroo"] .learnings-intro {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.project-detail-section[data-project="Altroo"] .learnings-intro h3 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(20px, 2vw, 32px);
+	font-weight: 500;
+	line-height: 1.2;
+	color: var(--altrooTeal);
+}
+
+.project-detail-section[data-project="Altroo"] .learnings-intro p,
+.project-detail-section[data-project="Altroo"] .learning-card p {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(16px, 2vw, 22px);
+	font-weight: 300;
+	line-height: 1.45;
+	color: var(--text);
+}
+
+.project-detail-section[data-project="Altroo"] .learnings-cards {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: clamp(20px, 4vw, 48px);
+}
+
+.project-detail-section[data-project="Altroo"] .learning-card {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	min-width: 0;
+	padding: clamp(24px, 2.2vw, 40px);
+	border-radius: 24px;
+	background: #e8faf7;
+}
+
+.project-detail-section[data-project="Altroo"] .learning-card h3 {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: clamp(18px, 2vw, 26px);
+	font-weight: 500;
+	line-height: 1.2;
+	color: #0a6661;
+}
+
+/* ============================================
    04 APP
    ============================================ */
 .project-detail-section[data-project="Altroo"] .project-app {
@@ -1231,6 +1319,19 @@
 
 	.project-detail-section[data-project="Altroo"] .style-guide-evidence {
 		grid-template-columns: 1fr;
+	}
+
+	.project-detail-section[data-project="Altroo"] .project-learnings {
+		margin: 0 24px 96px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .learnings-content {
+		grid-template-columns: 1fr;
+	}
+
+	.project-detail-section[data-project="Altroo"] .learnings-intro,
+	.project-detail-section[data-project="Altroo"] .learnings-cards {
+		grid-column: 1;
 	}
 
 	.project-detail-section[data-project="Altroo"] .branding-hero {
@@ -1492,6 +1593,23 @@
 
 	.project-detail-section[data-project="Altroo"] .project-validation {
 		margin: 0 16px 80px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .project-learnings {
+		margin: 0 16px 80px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .learnings-heading {
+		display: block;
+	}
+
+	.project-detail-section[data-project="Altroo"] .learnings-heading h2 {
+		display: inline;
+		margin-left: 16px;
+	}
+
+	.project-detail-section[data-project="Altroo"] .learnings-cards {
+		grid-template-columns: 1fr;
 	}
 
 	.project-detail-section[data-project="Altroo"] .validation-scenarios {
