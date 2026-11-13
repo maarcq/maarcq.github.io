@@ -1029,7 +1029,7 @@
 
 .project-detail-section[data-project="Altroo"] .learnings-intro,
 .project-detail-section[data-project="Altroo"] .learnings-cards {
-	grid-column: 2;
+	grid-column: 1 / -1;
 }
 
 .project-detail-section[data-project="Altroo"] .learnings-intro {
