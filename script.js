@@ -442,6 +442,8 @@ const translations = {
 			projects: "Projetos",
 			about: "Sobre",
 			resume: "Baixar Currículo",
+			back: "Voltar",
+			backAriaLabel: "Voltar para a página anterior",
 		},
 		hero: {
 			iosDev: "iOS Developer",
@@ -599,6 +601,8 @@ const translations = {
 			projects: "Projects",
 			about: "About",
 			resume: "Download Resume",
+			back: "Back",
+			backAriaLabel: "Back to the previous page",
 		},
 		hero: {
 			iosDev: "iOS Developer",
